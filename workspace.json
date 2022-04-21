@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "design-system-shared-design-tokens": "libs/design-system/shared/design-tokens"
+  }
 }
