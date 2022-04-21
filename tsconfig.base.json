@@ -13,9 +13,10 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@mono-universe/design-system-animation": [
+      "@mono-universe/design-system/animation": [
         "libs/design-system/animation/src/index.ts"
       ],
       "@mono-universe/design-system/interface": [
@@ -26,6 +27,9 @@
       ],
       "@mono-universe/design-system/three-d": [
         "libs/design-system/three-d/src/index.ts"
+      ],
+      "@mono-universe/design-system/shared/design-tokens": [
+        "libs/design-system/shared/design-tokens/index.ts"
       ]
     }
   },
