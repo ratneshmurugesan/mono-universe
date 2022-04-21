@@ -21,9 +21,6 @@
       "@mono-universe/design-system/interface": [
         "libs/design-system/interface/src/index.ts"
       ],
-      "@mono-universe/design-system/shared/design-tokens": [
-        "libs/design-system/shared/design-tokens/src/index.ts"
-      ],
       "@mono-universe/design-system/sound": [
         "libs/design-system/sound/src/index.ts"
       ],

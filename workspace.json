@@ -3,7 +3,6 @@
   "projects": {
     "design-system-animation": "libs/design-system/animation",
     "design-system-interface": "libs/design-system/interface",
-    "design-system-shared-design-tokens": "libs/design-system/shared/design-tokens",
     "design-system-sound": "libs/design-system/sound",
     "design-system-three-d": "libs/design-system/three-d"
   }
