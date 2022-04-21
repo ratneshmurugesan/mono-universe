@@ -1,20 +1,20 @@
 {
-  "root": "libs/design-system/motion",
-  "sourceRoot": "libs/design-system/motion/src",
+  "root": "libs/design-system/animation",
+  "sourceRoot": "libs/design-system/animation/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/design-system/motion/**/*.ts"]
+        "lintFilePatterns": ["libs/design-system/animation/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/design-system/motion"],
+      "outputs": ["coverage/libs/design-system/animation"],
       "options": {
-        "jestConfig": "libs/design-system/motion/jest.config.js",
+        "jestConfig": "libs/design-system/animation/jest.config.js",
         "passWithNoTests": true
       }
     }

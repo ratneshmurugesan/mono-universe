@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mono-universe/design-system/motion": [
-        "libs/design-system/motion/src/index.ts"
+      "@mono-universe/design-system-animation": [
+        "libs/design-system/animation/src/index.ts"
       ],
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/src/index.ts"

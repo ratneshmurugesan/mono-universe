@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'design-system-motion',
+  displayName: 'design-system-animation',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/design-system/motion',
+  coverageDirectory: '../../../coverage/libs/design-system/animation',
 };
