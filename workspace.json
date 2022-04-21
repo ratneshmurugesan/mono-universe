@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "design-system-motion": "libs/design-system/motion",
     "design-system-shared-design-tokens": "libs/design-system/shared/design-tokens"
   }
 }

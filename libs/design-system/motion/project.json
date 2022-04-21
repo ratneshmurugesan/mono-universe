@@ -1,0 +1,23 @@
+{
+  "root": "libs/design-system/motion",
+  "sourceRoot": "libs/design-system/motion/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/design-system/motion/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/design-system/motion"],
+      "options": {
+        "jestConfig": "libs/design-system/motion/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
