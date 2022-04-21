@@ -1,1 +1,1 @@
-export * from './lib/design-system-interface';
+export * from './lib';
