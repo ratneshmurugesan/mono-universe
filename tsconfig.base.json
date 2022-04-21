@@ -26,6 +26,9 @@
       ],
       "@mono-universe/design-system/sound": [
         "libs/design-system/sound/src/index.ts"
+      ],
+      "@mono-universe/design-system/three-d": [
+        "libs/design-system/three-d/src/index.ts"
       ]
     }
   },
