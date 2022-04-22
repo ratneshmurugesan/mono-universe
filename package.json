@@ -11,7 +11,10 @@
   "dependencies": {},
   "devDependencies": {
     "@nrwl/cli": "13.10.2",
+    "@nrwl/js": "^14.0.1",
     "@nrwl/nx-cloud": "latest",
+    "@nrwl/react": "^14.0.1",
+    "@nrwl/storybook": "^14.0.1",
     "@nrwl/workspace": "13.10.2",
     "@types/node": "16.11.7",
     "nx": "13.10.2",
