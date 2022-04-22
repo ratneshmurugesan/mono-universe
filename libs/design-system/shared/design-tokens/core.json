@@ -1,0 +1,53 @@
+{
+    "color": {
+        "black": "#000",
+        "white": "#fff"
+    },
+    "size": {
+        "xxs": "2px",
+        "xs": "4px",
+        "s": "8px",
+        "m": "16px",
+        "default": "16px",
+        "l": "32px",
+        "xl": "64px"
+    },
+    "font": {
+        "primary": "roboto"
+    },
+    "duration": {
+        "fast": {
+            "01": "70ms",
+            "02": "110ms"
+        },
+        "moderate": {
+            "01": "150ms",
+            "02": "240ms"
+        },
+        "slow": {
+            "01": "400ms",
+            "02": "700ms"
+        }
+    },
+    "ease": {
+        "standard": {
+            "productive": "cubic-bezier(0.2, 0, 0.38, 0.9)",
+            "expressive": "cubic-bezier(0.4, 0.14, 0.3, 1)"
+        },
+        "entrance": {
+            "productive": "cubic-bezier(0, 0, 0.38, 0.9)",
+            "expressive": "cubic-bezier(0, 0, 0.3, 1)"
+        },
+        "exit": {
+            "productive": "cubic-bezier(0.2, 0, 1, 0.9)",
+            "expressive": "cubic-bezier(0.4, 0.14, 1, 1)"
+        },
+        "in": "cubic-bezier(0.5, 0, 1, 1)",
+        "out": "cubic-bezier(0, 0, 0.5, 1)",
+        "in-out": "cubic-bezier(0.5, 0, 0.5, 1)"
+    },
+    "effect": {
+        "fadeIn": null,
+        "fadeOut": null
+    }
+}

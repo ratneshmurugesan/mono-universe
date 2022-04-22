@@ -1,0 +1,23 @@
+{
+  "root": "libs/design-system/interface",
+  "sourceRoot": "libs/design-system/interface/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/design-system/interface/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/design-system/interface"],
+      "options": {
+        "jestConfig": "libs/design-system/interface/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
