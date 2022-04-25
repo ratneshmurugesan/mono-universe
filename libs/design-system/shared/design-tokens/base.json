@@ -1,19 +1,29 @@
 {
     "color": {
-        "black": "#000",
-        "white": "#fff"
+        "black": "0 0 0",
+        "white": "0 100% 100%"
     },
     "size": {
+        "none": "0px",
         "xxs": "2px",
         "xs": "4px",
         "s": "8px",
         "m": "16px",
-        "default": "16px",
         "l": "32px",
         "xl": "64px"
     },
     "font": {
-        "primary": "roboto"
+        "roboto": "roboto"
+    },
+    "font-size": {
+        "900": "9.375rem",
+        "800": "6.25rem",
+        "700": "3.5rem",
+        "600": "2rem",
+        "500": "1.75rem",
+        "400": "1.125rem",
+        "300": "1rem",
+        "200": "0.875rem"
     },
     "duration": {
         "fast": {
@@ -45,9 +55,5 @@
         "in": "cubic-bezier(0.5, 0, 1, 1)",
         "out": "cubic-bezier(0, 0, 0.5, 1)",
         "in-out": "cubic-bezier(0.5, 0, 0.5, 1)"
-    },
-    "effect": {
-        "fadeIn": null,
-        "fadeOut": null
     }
 }

@@ -27,6 +27,8 @@
 
 // Size
 /* 
+    Density ≠ size  but size affects density
+    Density within components/elements
     Button size stabilize, other elements follow suit.
     Unify typography - S, M, L
     Unify space using space types.
