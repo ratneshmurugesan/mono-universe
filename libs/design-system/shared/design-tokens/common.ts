@@ -1,4 +1,29 @@
-import base from './base.json';
+import {
+  color as _color,
+  size as _size,
+  duration as _duration,
+  font as _font,
+  ease as _ease,
+  border as _border,
+} from './base.json';
+
+const size0 = _size[0];
+const size100 = _size[100];
+const size200 = _size[200];
+const size300 = _size[300];
+const size400 = _size[400];
+const size500 = _size[500];
+const size600 = _size[600];
+const size700 = _size[700];
+const size800 = _size[800];
+const size900 = _size[900];
+
+const fontSize100 = _font.size[100];
+const fontSize200 = _font.size[200];
+const fontSize300 = _font.size[300];
+const fontSize400 = _font.size[400];
+const fontSize500 = _font.size[500];
+const fontSize700 = _font.size[700];
 
 // Namespace = system +- theme +- domain
 // Object = group +- component +- element
@@ -6,66 +31,117 @@ import base from './base.json';
 // Modifier = variant +- state +- scale +- mode(on or w/o on)
 // system-component-category-concept-property-variant-scale
 
-const { color, size, duration, font, ease } = base;
+const color = {
+  black: _color.black,
+  white: _color.white,
 
-const colorTokens = {
-  'color-black': `hsla(${color.black}, 1)`,
-  'color-white': `hsla(${color.white}, 1)`,
-  // 'form-color-feedback-background-error-on-light': `hsla(${color.white}, 1)`,
+  'purple-lightest': _color.purple,
+  'purple-lighter': _color.purple,
+  'purple-light': _color.purple,
+  purple: _color.purple.regular,
+  'purple-dark': _color.purple.dark,
+  'purple-darker': _color.purple.darker,
 };
 
-const fontTokens = {
-  'font-plain': font.roboto,
+const font = {
+  'family-primary': _font.family.roboto,
+  'family-secondary': _font.family.helvetica,
+
+  'size-h1': fontSize700,
+  'size-h2': fontSize500,
+  'size-h3': fontSize400,
+  'size-h4': fontSize300,
+  'size-h5': fontSize200,
+  'size-h6': fontSize100,
+  size: fontSize300,
+  'size-sm': fontSize200,
+
+  'weight-light': _font.weight.light,
+  'weight-regular': _font.weight.light,
+  'weight-semibold': _font.weight.semibold,
+  'weight-bold': _font.weight.bold,
+  'weight-extrabold': _font.weight.extrabold,
 };
 
-const spaceTokens = {
-  'space-xxs': size.xxs,
-  'space-inset-xxs': `${size.xxs} ${size.xxs} ${size.xxs} ${size.xxs}`,
-  'space-squish-inset-xxs': `${size.s} ${size.xxs} ${size.s} ${size.xxs}`,
-  'space-stretch-inset-xxs': `${size.xxs} ${size.s} ${size.xxs} ${size.s}`,
-  'space-stack-xxs': `${size.none} ${size.none} ${size.xxs} ${size.none}`,
-  'space-inline-xxs': `${size.none} ${size.xxs} ${size.none} ${size.none}`,
+const lineHeight = {
+  h1: size900,
+  h2: size800,
+  h3: size700,
+  h4: size600,
+  h5: size500,
+  h6: size400,
 
-  'space-xs': size.xs,
-  'space-inset-xs': `${size.xs} ${size.xs} ${size.xs} ${size.xs}`,
-  'space-squish-inset-xs': `${size.s} ${size.xs} ${size.s} ${size.xs}`,
-  'space-stretch-inset-xs': `${size.xs} ${size.s} ${size.xs} ${size.s}`,
-  'space-stack-xs': `${size.none} ${size.none} ${size.xs} ${size.none}`,
-  'space-inline-xs': `${size.none} ${size.xs} ${size.none} ${size.none}`,
-
-  'space-s': size.s,
-  'space-inset-s': `${size.s} ${size.s} ${size.s} ${size.s}`,
-  'space-squish-inset-s': `${size.s} ${size.s} ${size.s} ${size.s}`,
-  'space-stretch-inset-s': `${size.s} ${size.s} ${size.s} ${size.s}`,
-  'space-stack-s': `${size.none} ${size.none} ${size.s} ${size.none}`,
-  'space-inline-s': `${size.none} ${size.s} ${size.none} ${size.none}`,
-
-  'space-m': size.m,
-  'space-inset-m': `${size.m} ${size.m} ${size.m} ${size.m}`,
-  'space-squish-inset-m': `${size.s} ${size.m} ${size.s} ${size.m}`,
-  'space-stretch-inset-m': `${size.m} ${size.s} ${size.m} ${size.s}`,
-  'space-stack-m': `${size.none} ${size.none} ${size.m} ${size.none}`,
-  'space-inline-m': `${size.none} ${size.m} ${size.none} ${size.none}`,
-
-  'space-l': size.l,
-  'space-inset-l': `${size.l} ${size.l} ${size.l} ${size.l}`,
-  'space-squish-inset-l': `${size.s} ${size.l} ${size.s} ${size.l}`,
-  'space-stretch-inset-l': `${size.l} ${size.s} ${size.l} ${size.s}`,
-  'space-stack-l': `${size.none} ${size.none} ${size.l} ${size.none}`,
-  'space-inline-l': `${size.none} ${size.l} ${size.none} ${size.none}`,
-
-  'space-xl': size.xl,
-  'space-inset-xl': `${size.xl} ${size.xl} ${size.xl} ${size.xl}`,
-  'space-squish-inset-xl': `${size.s} ${size.xl} ${size.s} ${size.xl}`,
-  'space-stretch-inset-xl': `${size.xl} ${size.s} ${size.xl} ${size.s}`,
-  'space-stack-xl': `${size.none} ${size.none} ${size.xl} ${size.none}`,
-  'space-inline-xl': `${size.none} ${size.xl} ${size.none} ${size.none}`,
+  regular: size600,
 };
 
-const animationTokens = {
-  // fadeIn: null,
-  // fadeOut: null,
-  'transition-slide-in': `${ease.standard} ${duration.moderate['01']}`,
+const border = {
+  'radius-base': _border.radius.base,
+  'radius-secondary': _border.radius.secondary,
+  'radius-circle': _border.radius.circle,
+  'width-xxs': size100,
+  'width-xs': size200,
+  'width-s': size300,
+  'width-m': size400,
+  'width-l': size500,
+  'width-xl': size600,
+  'width-xxl': size700,
 };
 
-export { colorTokens, spaceTokens, fontTokens, animationTokens };
+const shadow = {
+  'elevation-low': size100,
+  'elevation-medium': size400,
+  'elevation-high': size500,
+  // 'box-shadow-low': `${shadow}`,
+};
+
+const space = {
+  xxs: size100,
+  'inset-xxs': `${size100} ${size100} ${size100} ${size100}`,
+  'squish-inset-xxs': `${size300} ${size100} ${size300} ${size100}`,
+  'stretch-inset-xxs': `${size100} ${size300} ${size100} ${size300}`,
+  'stack-xxs': `${size0} ${size0} ${size100} ${size0}`,
+  'inline-xxs': `${size0} ${size100} ${size0} ${size0}`,
+
+  xs: size200,
+  'inset-xs': `${size200} ${size200} ${size200} ${size200}`,
+  'squish-inset-xs': `${size300} ${size200} ${size300} ${size200}`,
+  'stretch-inset-xs': `${size200} ${size300} ${size200} ${size300}`,
+  'stack-xs': `${size0} ${size0} ${size200} ${size0}`,
+  'inline-xs': `${size0} ${size200} ${size0} ${size0}`,
+
+  s: size300,
+  'inset-s': `${size300} ${size300} ${size300} ${size300}`,
+  'squish-inset-s': `${size300} ${size300} ${size300} ${size300}`,
+  'stretch-inset-s': `${size300} ${size300} ${size300} ${size300}`,
+  'stack-s': `${size0} ${size0} ${size300} ${size0}`,
+  'inline-s': `${size0} ${size300} ${size0} ${size0}`,
+
+  m: size400,
+  'inset-m': `${size400} ${size400} ${size400} ${size400}`,
+  'squish-inset-m': `${size300} ${size400} ${size300} ${size400}`,
+  'stretch-inset-m': `${size400} ${size300} ${size400} ${size300}`,
+  'stack-m': `${size0} ${size0} ${size400} ${size0}`,
+  'inline-m': `${size0} ${size400} ${size0} ${size0}`,
+
+  l: size500,
+  'inset-l': `${size500} ${size500} ${size500} ${size500}`,
+  'squish-inset-l': `${size300} ${size500} ${size300} ${size500}`,
+  'stretch-inset-l': `${size500} ${size300} ${size500} ${size300}`,
+  'stack-l': `${size0} ${size0} ${size500} ${size0}`,
+  'inline-l': `${size0} ${size500} ${size0} ${size0}`,
+
+  xl: size600,
+  'inset-xl': `${size600} ${size600} ${size600} ${size600}`,
+  'squish-inset-xl': `${size300} ${size600} ${size300} ${size600}`,
+  'stretch-inset-xl': `${size600} ${size300} ${size600} ${size300}`,
+  'stack-xl': `${size0} ${size0} ${size600} ${size0}`,
+  'inline-xl': `${size0} ${size600} ${size0} ${size0}`,
+};
+
+const animation = {
+  'slow-fade-long-distance': `${_ease['in-out']} ${_duration.slow}`,
+  'medium-fade-medium-distance': `${_duration.medium}`,
+  'long-fade-long-distance': `${_duration.medium}`,
+};
+
+export { color, space, font, animation, border, shadow, lineHeight };
