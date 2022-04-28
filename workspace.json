@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "design-system-core": "libs/design-system/core"
+    "design-system-core": "libs/design-system/core",
+    "design-system-core-e2e": "apps/design-system-core-e2e"
   }
 }
