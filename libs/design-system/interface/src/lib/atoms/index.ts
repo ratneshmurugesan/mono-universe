@@ -1,8 +1,8 @@
-import { commonTokens } from '@mono-universe/design-system/shared/design-tokens';
+import { color, font } from '@mono-universe/design-system/shared/design-tokens';
 
 const interfaceTokens = {
-  headerTextSize: commonTokens['mu-small-text'],
-  boxBgColor: commonTokens['mu-color-primary'],
+  headerTextSize: font['size-h2'],
+  boxBgColor: color['purple-darker'],
 };
 
 export { interfaceTokens };

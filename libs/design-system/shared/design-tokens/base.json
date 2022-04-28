@@ -69,9 +69,18 @@
         }
     },
     "duration": {
-        "fast": "100ms",
-        "medium": "250ms",
-        "slow": "500ms"
+        "fast": {
+            "01": "70ms",
+            "02": "110ms"
+        },
+        "medium": {
+            "01": "150ms",
+            "02": "240ms"
+        },
+        "slow": {
+            "01": "400ms",
+            "02": "700ms"
+        }
     },
     "ease": {
         "standard": {
