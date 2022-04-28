@@ -16,6 +16,9 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@mono-universe/design-system/core": [
+        "libs/design-system/core/src/index.ts"
+      ],
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/index.ts"
       ]
