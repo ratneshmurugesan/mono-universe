@@ -1,6 +1,4 @@
 {
   "version": 2,
-  "projects": {
-    "design-system-interface": "libs/design-system/interface"
-  }
+  "projects": {}
 }
