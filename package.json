@@ -6,6 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "build-storybook": "yarn nx run design-system-core:build-storybook",
     "chromatic": "chromatic -d dist/storybook/design-system-core --exit-zero-on-changes"
   },
   "private": true,
