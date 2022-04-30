@@ -52,9 +52,9 @@ const color = {
   black: _color.black,
   white: _color.white,
 
-  'purple-lightest': _color.purple,
-  'purple-lighter': _color.purple,
-  'purple-light': _color.purple,
+  'purple-lightest': _color.purple.lightest,
+  'purple-lighter': _color.purple.lighter,
+  'purple-light': _color.purple.light,
   purple: _color.purple.regular,
   'purple-dark': _color.purple.dark,
   'purple-darker': _color.purple.darker,
