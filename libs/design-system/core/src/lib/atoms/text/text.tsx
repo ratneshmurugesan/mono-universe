@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { color, font, motion, space } from '@mono-universe/design-system/shared/design-tokens';
 
 const customStyle = {
-  fontSize: font['size-h3'],
+  fontSize: font['size-h4'],
   fontWeight: font['weight-extrabold'],
   padding: space.s,
 }
