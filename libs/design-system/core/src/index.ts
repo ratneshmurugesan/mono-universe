@@ -1,1 +1,1 @@
-export * from './lib/design-system-core';
+export * from './lib/atoms/text/text';
