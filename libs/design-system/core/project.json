@@ -47,7 +47,7 @@
       ],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "libs/design-system/core/dist/storybook/design-system-core",
+        "outputPath": "dist/storybook/design-system-core",
         "config": {
           "configFolder": "libs/design-system/core/.storybook"
         }
