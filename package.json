@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "chromatic": "npx chromatic -d dist/storybook/design-system-core"
+    "chromatic": "chromatic -d dist/storybook/design-system-core --exit-zero-on-changes"
   },
   "private": true,
   "dependencies": {
