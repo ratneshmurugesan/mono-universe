@@ -6,14 +6,20 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/design-system/core/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/design-system/core/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/design-system/core"],
+      "outputs": [
+        "coverage/libs/design-system/core"
+      ],
       "options": {
         "jestConfig": "libs/design-system/core/jest.config.ts",
         "passWithNoTests": true
@@ -36,10 +42,12 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/design-system-core",
+        "outputPath": "libs/design-system/core/dist/storybook/design-system-core",
         "config": {
           "configFolder": "libs/design-system/core/.storybook"
         }
