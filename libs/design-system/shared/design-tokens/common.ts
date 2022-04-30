@@ -25,6 +25,23 @@ const fontSize400 = _font.size[400];
 const fontSize500 = _font.size[500];
 const fontSize700 = _font.size[700];
 
+const durationSlow01 = _duration.slow['01'];
+const durationSlow02 = _duration.slow['02'];
+const durationMedium01 = _duration.medium['01'];
+const durationMedium02 = _duration.medium['02'];
+const durationFast01 = _duration.fast['01'];
+const durationFast02 = _duration.fast['02'];
+
+const easeIn = _ease.in;
+const easeOut = _ease.out;
+const easeInOut = _ease['in-out'];
+const easeStandardExpressive = _ease.standard.expressive;
+const easeStandardProductive = _ease.standard.productive;
+const easeEntranceExpressive = _ease.entrance.expressive;
+const easeEntranceProductive = _ease.entrance.productive;
+const easeExitExpressive = _ease.exit.expressive;
+const easeExitProductive = _ease.exit.productive;
+
 // Namespace = system +- theme +- domain
 // Object = group +- component +- element
 // Base = category +- concept +- property
@@ -35,9 +52,9 @@ const color = {
   black: _color.black,
   white: _color.white,
 
-  'purple-lightest': _color.purple,
-  'purple-lighter': _color.purple,
-  'purple-light': _color.purple,
+  'purple-lightest': _color.purple.lightest,
+  'purple-lighter': _color.purple.lighter,
+  'purple-light': _color.purple.light,
   purple: _color.purple.regular,
   'purple-dark': _color.purple.dark,
   'purple-darker': _color.purple.darker,
@@ -138,10 +155,22 @@ const space = {
   'inline-xl': `${size0} ${size600} ${size0} ${size0}`,
 };
 
-const animation = {
-  'slow-fade-long-distance': `${_ease['in-out']} ${_duration.slow}`,
-  'medium-fade-medium-distance': `${_duration.medium}`,
-  'long-fade-long-distance': `${_duration.medium}`,
+const motion = {
+  'duration-slow-01': durationSlow01,
+  'duration-slow-02': durationSlow02,
+  'duration-medium-01': durationMedium01,
+  'duration-medium-02': durationMedium02,
+  'duration-fast-01': durationFast01,
+  'duration-fast-02': durationFast02,
+  'ease-in': easeIn,
+  'ease-out': easeOut,
+  'ease-in-out': easeInOut,
+  'ease-standard-expressive': easeStandardExpressive,
+  'ease-standard-productive': easeStandardProductive,
+  'ease-entrance-expressive': easeEntranceExpressive,
+  'ease-entrance-productive': easeEntranceProductive,
+  'ease-exit-expressive': easeExitExpressive,
+  'ease-exit-productive': easeExitProductive,
 };
 
-export { color, space, font, animation, border, shadow, lineHeight };
+export { color, space, font, motion, border, shadow, lineHeight };

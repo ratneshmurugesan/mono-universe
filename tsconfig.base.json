@@ -16,17 +16,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@mono-universe/design-system/animation": [
-        "libs/design-system/animation/src/index.ts"
-      ],
-      "@mono-universe/design-system/interface": [
-        "libs/design-system/interface/src/index.ts"
-      ],
-      "@mono-universe/design-system/sound": [
-        "libs/design-system/sound/src/index.ts"
-      ],
-      "@mono-universe/design-system/three-d": [
-        "libs/design-system/three-d/src/index.ts"
+      "@mono-universe/design-system/core": [
+        "libs/design-system/core/src/index.ts"
       ],
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/index.ts"
