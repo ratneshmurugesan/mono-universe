@@ -3,7 +3,7 @@ import { color, font, motion, space } from '@mono-universe/design-system/shared/
 
 const customStyle = {
   fontSize: font['size-h4'],
-  fontWeight: font['weight-extrabold'],
+  fontWeight: font['weight-light'],
   padding: space.s,
 }
 

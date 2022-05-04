@@ -6,10 +6,12 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "chromatic": "npx chromatic -d dist/storybook/design-system-core"
+    "build-storybook": "yarn nx run design-system-core:build-storybook",
+    "chromatic": "chromatic -d dist/storybook/design-system-core"
   },
   "private": true,
   "dependencies": {
+    "@storybook/addon-a11y": "^6.4.22",
     "core-js": "^3.6.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
@@ -32,6 +34,7 @@
     "@nrwl/storybook": "^14.0.1",
     "@nrwl/web": "14.0.1",
     "@nrwl/workspace": "13.10.2",
+    "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-essentials": "~6.4.12",
     "@storybook/builder-webpack5": "~6.4.12",
     "@storybook/core-server": "~6.4.12",
@@ -62,6 +65,8 @@
     "jest": "27.2.3",
     "nx": "13.10.2",
     "prettier": "^2.5.1",
+    "react-aria": "^3.14.1",
+    "react-stately": "^3.12.2",
     "react-test-renderer": "18.0.0",
     "ts-jest": "27.0.5",
     "typescript": "~4.6.2",
