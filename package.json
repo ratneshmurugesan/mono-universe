@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@storybook/addon-a11y": "^6.4.22",
     "core-js": "^3.6.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
@@ -65,6 +66,7 @@
     "nx": "13.10.2",
     "prettier": "^2.5.1",
     "react-aria": "^3.14.1",
+    "react-stately": "^3.12.2",
     "react-test-renderer": "18.0.0",
     "ts-jest": "27.0.5",
     "typescript": "~4.6.2",
