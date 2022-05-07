@@ -7,7 +7,8 @@
     "build": "nx build",
     "test": "nx test",
     "build-storybook": "yarn nx run design-system-core:build-storybook",
-    "chromatic": "chromatic -d dist/storybook/design-system-core"
+    "chromatic": "chromatic -d dist/storybook/design-system-core",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -70,6 +71,12 @@
     "react-test-renderer": "18.0.0",
     "ts-jest": "27.0.5",
     "typescript": "~4.6.2",
-    "url-loader": "^3.0.0"
+    "url-loader": "^3.0.0",
+    "husky": "^7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn nx affected --target=test"
+    }
   }
 }
