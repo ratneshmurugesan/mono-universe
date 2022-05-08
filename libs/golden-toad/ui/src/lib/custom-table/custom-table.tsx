@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Table, Space } from 'antd';
 import "./table.scss";
@@ -6,8 +5,9 @@ import { useCustomTable } from './useCustomTable';
 const { Column } = Table;
 
 type recordProps = {
-  name: string
-}
+  key: number
+};
+
 const StyledCustomTable = styled.div``
 
 const userData = [
@@ -61,18 +61,18 @@ export function CustomTable() {
         />
         <Column
           title=""
-          render={(_, record) => {
+          render={(_, record: recordProps) => {
             console.log("Action", record);
 
             return (
               <Space size="middle">
                 <button
-                  onClick={() => handleViewProfile(1)}
+                  onClick={() => handleViewProfile(record.key)}
                 >
                   View Profile
                 </button>
                 <button
-                  onClick={() => handleViewPost(1)}
+                  onClick={() => handleViewPost(record.key)}
                 >
                   View Post
                 </button>

@@ -1,0 +1,23 @@
+{
+  "root": "libs/golden-toad/reducer/app-reducer",
+  "sourceRoot": "libs/golden-toad/reducer/app-reducer/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/golden-toad/reducer/app-reducer/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/golden-toad/reducer/app-reducer"],
+      "options": {
+        "jestConfig": "libs/golden-toad/reducer/app-reducer/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

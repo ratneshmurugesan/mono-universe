@@ -3,7 +3,10 @@
   "projects": {
     "design-system-core": "libs/design-system/core",
     "golden-toad": "apps/golden-toad",
+    "golden-toad-context-app-context": "libs/golden-toad/context/app-context",
     "golden-toad-e2e": "apps/golden-toad-e2e",
-    "golden-toad-ui": "libs/golden-toad/ui"
+    "golden-toad-reducer-app-reducer": "libs/golden-toad/reducer/app-reducer",
+    "golden-toad-ui": "libs/golden-toad/ui",
+    "shared-styled-system": "libs/shared/styled-system"
   }
 }

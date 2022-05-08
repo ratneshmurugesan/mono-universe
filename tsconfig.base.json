@@ -22,7 +22,16 @@
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/index.ts"
       ],
-      "@mono-universe/golden-toad/ui": ["libs/golden-toad/ui/src/index.ts"]
+      "@mono-universe/golden-toad/context/app-context": [
+        "libs/golden-toad/context/app-context/src/index.ts"
+      ],
+      "@mono-universe/golden-toad/reducer/app-reducer": [
+        "libs/golden-toad/reducer/app-reducer/src/index.ts"
+      ],
+      "@mono-universe/golden-toad/ui": ["libs/golden-toad/ui/src/index.ts"],
+      "@mono-universe/shared/styled-system": [
+        "libs/shared/styled-system/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
