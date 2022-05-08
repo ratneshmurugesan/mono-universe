@@ -1,0 +1,28 @@
+{
+  "root": "apps/golden-toad-e2e",
+  "sourceRoot": "apps/golden-toad-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/golden-toad-e2e/cypress.json",
+        "devServerTarget": "golden-toad:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "golden-toad:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/golden-toad-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["golden-toad"]
+}

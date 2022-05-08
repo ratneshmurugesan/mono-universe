@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "design-system-core": "libs/design-system/core"
+    "design-system-core": "libs/design-system/core",
+    "golden-toad": "apps/golden-toad",
+    "golden-toad-e2e": "apps/golden-toad-e2e",
+    "golden-toad-ui": "libs/golden-toad/ui"
   }
 }

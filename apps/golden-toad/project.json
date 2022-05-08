@@ -1,0 +1,83 @@
+{
+  "root": "apps/golden-toad",
+  "sourceRoot": "apps/golden-toad/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/golden-toad",
+        "index": "apps/golden-toad/src/index.html",
+        "baseHref": "/",
+        "main": "apps/golden-toad/src/main.tsx",
+        "polyfills": "apps/golden-toad/src/polyfills.ts",
+        "tsConfig": "apps/golden-toad/tsconfig.app.json",
+        "assets": [
+          "apps/golden-toad/src/favicon.ico",
+          "apps/golden-toad/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/golden-toad/src/environments/environment.ts",
+              "with": "apps/golden-toad/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "golden-toad:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "golden-toad:build:development"
+        },
+        "production": {
+          "buildTarget": "golden-toad:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/golden-toad/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/golden-toad"],
+      "options": {
+        "jestConfig": "apps/golden-toad/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
