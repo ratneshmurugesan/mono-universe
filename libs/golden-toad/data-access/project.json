@@ -1,0 +1,23 @@
+{
+  "root": "libs/golden-toad/data-access",
+  "sourceRoot": "libs/golden-toad/data-access/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/golden-toad/data-access/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/golden-toad/data-access"],
+      "options": {
+        "jestConfig": "libs/golden-toad/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

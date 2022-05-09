@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'golden-toad-reducer-app-reducer',
-  preset: '../../../../jest.preset.js',
+  displayName: 'golden-toad-data-access',
+  preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -10,6 +10,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory:
-    '../../../../coverage/libs/golden-toad/reducer/app-reducer',
+  coverageDirectory: '../../../coverage/libs/golden-toad/data-access',
 };

@@ -22,11 +22,11 @@
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/index.ts"
       ],
-      "@mono-universe/golden-toad/context/app-context": [
-        "libs/golden-toad/context/app-context/src/index.ts"
+      "@mono-universe/golden-toad/data-access": [
+        "libs/golden-toad/data-access/src/index.ts"
       ],
-      "@mono-universe/golden-toad/reducer/app-reducer": [
-        "libs/golden-toad/reducer/app-reducer/src/index.ts"
+      "@mono-universe/golden-toad/rest-api": [
+        "libs/golden-toad/rest-api/src/index.ts"
       ],
       "@mono-universe/golden-toad/ui": ["libs/golden-toad/ui/src/index.ts"],
       "@mono-universe/shared/styled-system": [

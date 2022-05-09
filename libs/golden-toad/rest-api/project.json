@@ -1,0 +1,23 @@
+{
+  "root": "libs/golden-toad/rest-api",
+  "sourceRoot": "libs/golden-toad/rest-api/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/golden-toad/rest-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/golden-toad/rest-api"],
+      "options": {
+        "jestConfig": "libs/golden-toad/rest-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

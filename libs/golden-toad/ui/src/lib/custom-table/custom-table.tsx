@@ -2,49 +2,30 @@ import styled from 'styled-components';
 import { Table, Space } from 'antd';
 import "./table.scss";
 import { useCustomTable } from './useCustomTable';
+import { CustomDrawer } from '../custom-drawer/custom-drawer';
+import { ProfileDrawer } from '../profile-drawer/profile-drawer';
 const { Column } = Table;
 
 type recordProps = {
-  key: number
+  id: number
 };
 
 const StyledCustomTable = styled.div``
 
-const userData = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-
-export function CustomTable() {
+export const CustomTable = () => {
   const {
+    userData,
     handleViewProfile,
     handleViewPost
   } = useCustomTable();
+
   return (
     <StyledCustomTable>
       <Table
         dataSource={userData}
         size="small"
         tableLayout="auto"
+        rowKey="name"
       >
         <Column
           title={
@@ -52,27 +33,80 @@ export function CustomTable() {
               Name
             </h2>
           }
-          dataIndex={"name"}
-          key={"name"}
+          dataIndex="name"
+          key="name"
           fixed="left"
           render={(text = "") => {
             return <p>{text}</p>;
           }}
         />
         <Column
-          title=""
-          render={(_, record: recordProps) => {
-            console.log("Action", record);
+          title={
+            <h2>
+              UserName
+            </h2>
+          }
+          dataIndex="username"
+          key="username"
+          fixed="left"
+          render={(text = "") => {
+            return <p>{text}</p>;
+          }}
+        />
+        <Column
+          title={
+            <h2>
+              Email
+            </h2>
+          }
+          dataIndex="email"
+          key="email"
+          fixed="left"
+          render={(text = "") => {
+            return <p>{text}</p>;
+          }}
+        />
+        <Column
+          title={
+            <h2>
+              Phone
+            </h2>
+          }
+          dataIndex="phone"
+          key="phone"
+          fixed="left"
+          render={(text = "") => {
+            return <p>{text}</p>;
+          }}
+        />
+        <Column
+          title={
+            <h2>
+              Website
+            </h2>
+          }
+          dataIndex="website"
+          key="website"
+          fixed="left"
+          render={(text = "") => {
+            return <p>{text}</p>;
+          }}
+        />
 
+        <Column
+          title=""
+          dataIndex="action"
+          key="action"
+          render={(_, record: recordProps) => {
             return (
               <Space size="middle">
                 <button
-                  onClick={() => handleViewProfile(record.key)}
+                  onClick={() => handleViewProfile(record.id)}
                 >
                   View Profile
                 </button>
                 <button
-                  onClick={() => handleViewPost(record.key)}
+                  onClick={() => handleViewPost(record.id)}
                 >
                   View Post
                 </button>
@@ -81,8 +115,7 @@ export function CustomTable() {
           }}
         />
       </Table>
-    </StyledCustomTable>
-  );
-}
+    </StyledCustomTable>);
+};
 
 export default CustomTable;
