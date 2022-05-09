@@ -1,7 +1,10 @@
-import { CustomTable, RenderInIFrame } from '@mono-universe/golden-toad/ui'
+import { CustomTable, RenderInIFrame, CustomSidePanel } from '@mono-universe/golden-toad/ui'
 import styled from 'styled-components';
 
-const StyledAdmin = styled.div``
+const StyledAdmin = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 100px;
+`
 
 export default function Admin() {
     return (
@@ -9,6 +12,7 @@ export default function Admin() {
             <RenderInIFrame>
                 <CustomTable />
             </RenderInIFrame>
+            <CustomSidePanel />
         </StyledAdmin>
     )
 }

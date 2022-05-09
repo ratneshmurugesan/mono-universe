@@ -24,12 +24,10 @@ export const useCustomTable = () => {
   );
 
   const handleViewProfile = (userId: number) => {
-    console.log('handleViewProfile', userId);
     dispatch(setSelectedUserId(userId));
     dispatch(showProfileDrawer());
   };
   const handleViewPost = (userId: number) => {
-    console.log('handleViewPost', userId);
     dispatch(setSelectedUserId(userId));
     dispatch(showPostDrawer());
   };
@@ -37,8 +35,6 @@ export const useCustomTable = () => {
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
-
-  console.log({ selectedUserId, isProfileOpen, isPostOpen });
 
   return {
     userData,

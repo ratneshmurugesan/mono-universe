@@ -1,4 +1,3 @@
-import { table } from 'console';
 import { ReactNode, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';

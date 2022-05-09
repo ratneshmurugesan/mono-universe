@@ -39,8 +39,6 @@ export const useProfileDrawer = () => {
     }
   }, [selectedUserId, userData]);
 
-  console.log('useProfileDrawer', { isProfileOpen });
-
   return {
     onClose,
     isOpen: isProfileOpen,

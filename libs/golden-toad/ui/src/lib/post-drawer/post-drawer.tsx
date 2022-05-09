@@ -15,11 +15,6 @@ const drawerContentStyle = {
 export function PostDrawer() {
   const { onClose, isOpen, postData, selectedUserName } = usePostDrawer()
 
-  console.log("PostDrawer", {
-    isOpen,
-    selectedUserName
-  });
-
   return (
     <SwipeableDrawer
       id="PostDrawer"
