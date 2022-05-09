@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Table, Space } from 'antd';
 import "./table.scss";
 import { useCustomTable } from './useCustomTable';
-import { CustomDrawer } from '../custom-drawer/custom-drawer';
-import { ProfileDrawer } from '../profile-drawer/profile-drawer';
 const { Column } = Table;
 
 type recordProps = {

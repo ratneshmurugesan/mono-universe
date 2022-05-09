@@ -1,7 +1,6 @@
 import { postAPI, userAPI } from '@mono-universe/golden-toad/rest-api';
 import { configureStore } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { Dispatch } from 'react';
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux';
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -61,18 +60,21 @@ export const getPostsByUserId = async (userId: number) => {
 };
 
 export const showPostDrawer = () => (dispatch: AppDispatch) => {
+  console.log('showPostDrawer');
   const actions = userSlice.actions;
   dispatch(actions.setPostDrawer(true));
   dispatch(actions.setProfileDrawer(false));
 };
 
 export const closePostDrawer = () => (dispatch: AppDispatch) => {
+  console.log('closePostDrawer');
   const actions = userSlice.actions;
   dispatch(actions.setProfileDrawer(false));
   dispatch(actions.setPostDrawer(false));
 };
 
 export const showProfileDrawer = () => (dispatch: AppDispatch) => {
+  console.log('showProfileDrawer');
   const actions = userSlice.actions;
   dispatch(actions.setProfileDrawer(true));
   dispatch(actions.setPostDrawer(false));
@@ -80,6 +82,7 @@ export const showProfileDrawer = () => (dispatch: AppDispatch) => {
 
 export const closeProfileDrawer = () => (dispatch: AppDispatch) => {
   const actions = userSlice.actions;
+  console.log('closeProfileDrawer');
   dispatch(actions.setPostDrawer(false));
   dispatch(actions.setProfileDrawer(false));
 };

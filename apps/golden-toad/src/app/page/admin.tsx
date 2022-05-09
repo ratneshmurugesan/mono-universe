@@ -1,7 +1,13 @@
-import { CustomDrawer, CustomTable, RenderInIFrame, ProfileDrawer } from '@mono-universe/golden-toad/ui'
+import { CustomTable, RenderInIFrame } from '@mono-universe/golden-toad/ui'
 import styled from 'styled-components';
 
 const StyledAdmin = styled.div`
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #ebedf0;
+  border-radius: 2px;
 `
 
 export default function Admin() {
@@ -10,8 +16,6 @@ export default function Admin() {
             <RenderInIFrame>
                 <CustomTable />
             </RenderInIFrame>
-            <ProfileDrawer />
-            <CustomDrawer />
         </StyledAdmin>
     )
 }

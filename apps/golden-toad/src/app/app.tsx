@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Route, Link, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Admin from './page/admin';
 import { CustomTable } from '@mono-universe/golden-toad/ui';
 import { Provider } from 'react-redux';

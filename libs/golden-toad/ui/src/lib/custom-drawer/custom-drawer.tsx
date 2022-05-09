@@ -11,7 +11,12 @@ type postProps = {
 export function CustomDrawer() {
   const { onClose, isOpen, postData, selectedUserName } = useCustomDrawer()
 
-  return isOpen ? (
+  console.log("CustomDrawer", {
+    isOpen,
+    selectedUserName
+  });
+
+  return (
     <Drawer
       title={<><h3>Post</h3><p>{selectedUserName}</p></>}
       placement="right"
@@ -28,6 +33,6 @@ export function CustomDrawer() {
         </div>
       })}
     </Drawer>
-  ) : null
+  )
 }
 

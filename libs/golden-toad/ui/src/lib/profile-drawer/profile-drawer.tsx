@@ -14,6 +14,13 @@ export function ProfileDrawer() {
     phone,
     website } = useProfileDrawer()
 
+  console.log("ProfileDrawer", {
+    isOpen, username,
+    email,
+    phone,
+    website
+  });
+
   return (
     <Drawer
       title={<><h3>Profile</h3><p>{username}</p></>}
@@ -21,8 +28,6 @@ export function ProfileDrawer() {
       closable={true}
       onClose={onClose}
       visible={isOpen}
-      getContainer={false}
-      style={{ position: 'absolute' }}
     >
       <p>{username}</p>
       <p>{email}</p>
