@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@reduxjs/toolkit": "^1.8.1",
     "@storybook/addon-a11y": "^6.4.22",
     "antd": "^4.20.2",

@@ -13,7 +13,7 @@ type userProps = {
   name: string;
 };
 
-export const useCustomDrawer = () => {
+export const usePostDrawer = () => {
   const dispatch = useAppDispatch();
   const [postData, setPostData] = useState([]);
 

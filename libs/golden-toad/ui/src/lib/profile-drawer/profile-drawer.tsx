@@ -1,4 +1,5 @@
-import { Drawer } from 'antd';
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+
 import { Fragment } from 'react';
 import { useProfileDrawer } from './useProfileDrawer';
 
@@ -7,33 +8,34 @@ type postProps = {
   title: string,
   body: string
 }
+const drawerContentStyle = {
+  maxWidth: "300px",
+  padding: "10px"
+}
 
 export function ProfileDrawer() {
   const { onClose, isOpen, username,
     email,
     phone,
-    website } = useProfileDrawer()
-
-  console.log("ProfileDrawer", {
-    isOpen, username,
-    email,
-    phone,
-    website
-  });
+    website } = useProfileDrawer();
 
   return (
-    <Drawer
-      title={<><h3>Profile</h3><p>{username}</p></>}
-      placement="right"
-      closable={true}
+    <SwipeableDrawer
+      id="ProfileDrawer"
+      anchor="right"
+      open={isOpen}
+      onOpen={() => null}
       onClose={onClose}
-      visible={isOpen}
+      disableSwipeToOpen={true}
+      swipeAreaWidth={0}
     >
-      <p>{username}</p>
-      <p>{email}</p>
-      <p>{phone}</p>
-      <p>{website}</p>
-    </Drawer>
+      <div style={drawerContentStyle}>
+        <p>{username}</p>
+        <p>{email}</p>
+        <p>{phone}</p>
+        <p>{website}</p>
+      </div>
+    </SwipeableDrawer>
   )
 }
 
