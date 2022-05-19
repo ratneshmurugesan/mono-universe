@@ -19,7 +19,7 @@ export const globalTypes = {
       showName: true,
     },
   },
-};
+}
 
 // const themes = {
 //   light: theme,

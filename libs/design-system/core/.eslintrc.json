@@ -4,7 +4,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        // "max-lines": ["error", 5]
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],
