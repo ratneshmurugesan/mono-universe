@@ -1,12 +1,12 @@
-import { Story, Meta } from '@storybook/react';
-import { Text, TextProps } from './text';
+import { Story, Meta } from '@storybook/react'
+import { Text, TextProps } from './text'
 
 export default {
   component: Text,
   title: 'Atoms/Text',
-} as Meta;
+} as Meta
 
-const Template: Story<TextProps> = (args) => <Text {...args} />;
+const Template: Story<TextProps> = (args) => <Text {...args} />
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}

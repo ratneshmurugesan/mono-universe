@@ -5,42 +5,42 @@ import {
   font as _font,
   ease as _ease,
   border as _border,
-} from './base.json';
+} from './base.json'
 
-const size0 = _size[0];
-const size100 = _size[100];
-const size200 = _size[200];
-const size300 = _size[300];
-const size400 = _size[400];
-const size500 = _size[500];
-const size600 = _size[600];
-const size700 = _size[700];
-const size800 = _size[800];
-const size900 = _size[900];
+const size0 = _size[0]
+const size100 = _size[100]
+const size200 = _size[200]
+const size300 = _size[300]
+const size400 = _size[400]
+const size500 = _size[500]
+const size600 = _size[600]
+const size700 = _size[700]
+const size800 = _size[800]
+const size900 = _size[900]
 
-const fontSize100 = _font.size[100];
-const fontSize200 = _font.size[200];
-const fontSize300 = _font.size[300];
-const fontSize400 = _font.size[400];
-const fontSize500 = _font.size[500];
-const fontSize700 = _font.size[700];
+const fontSize100 = _font.size[100]
+const fontSize200 = _font.size[200]
+const fontSize300 = _font.size[300]
+const fontSize400 = _font.size[400]
+const fontSize500 = _font.size[500]
+const fontSize700 = _font.size[700]
 
-const durationSlow01 = _duration.slow['01'];
-const durationSlow02 = _duration.slow['02'];
-const durationMedium01 = _duration.medium['01'];
-const durationMedium02 = _duration.medium['02'];
-const durationFast01 = _duration.fast['01'];
-const durationFast02 = _duration.fast['02'];
+const durationSlow01 = _duration.slow['01']
+const durationSlow02 = _duration.slow['02']
+const durationMedium01 = _duration.medium['01']
+const durationMedium02 = _duration.medium['02']
+const durationFast01 = _duration.fast['01']
+const durationFast02 = _duration.fast['02']
 
-const easeIn = _ease.in;
-const easeOut = _ease.out;
-const easeInOut = _ease['in-out'];
-const easeStandardExpressive = _ease.standard.expressive;
-const easeStandardProductive = _ease.standard.productive;
-const easeEntranceExpressive = _ease.entrance.expressive;
-const easeEntranceProductive = _ease.entrance.productive;
-const easeExitExpressive = _ease.exit.expressive;
-const easeExitProductive = _ease.exit.productive;
+const easeIn = _ease.in
+const easeOut = _ease.out
+const easeInOut = _ease['in-out']
+const easeStandardExpressive = _ease.standard.expressive
+const easeStandardProductive = _ease.standard.productive
+const easeEntranceExpressive = _ease.entrance.expressive
+const easeEntranceProductive = _ease.entrance.productive
+const easeExitExpressive = _ease.exit.expressive
+const easeExitProductive = _ease.exit.productive
 
 // Namespace = system +- theme +- domain
 // Object = group +- component +- element
@@ -58,7 +58,7 @@ const color = {
   purple: _color.purple.regular,
   'purple-dark': _color.purple.dark,
   'purple-darker': _color.purple.darker,
-};
+}
 
 const font = {
   'family-primary': _font.family.roboto,
@@ -78,7 +78,7 @@ const font = {
   'weight-semibold': _font.weight.semibold,
   'weight-bold': _font.weight.bold,
   'weight-extrabold': _font.weight.extrabold,
-};
+}
 
 const lineHeight = {
   h1: size900,
@@ -89,7 +89,7 @@ const lineHeight = {
   h6: size400,
 
   regular: size600,
-};
+}
 
 const border = {
   'radius-base': _border.radius.base,
@@ -102,14 +102,14 @@ const border = {
   'width-l': size500,
   'width-xl': size600,
   'width-xxl': size700,
-};
+}
 
 const shadow = {
   'elevation-low': size100,
   'elevation-medium': size400,
   'elevation-high': size500,
   // 'box-shadow-low': `${shadow}`,
-};
+}
 
 const space = {
   xxs: size100,
@@ -153,7 +153,7 @@ const space = {
   'stretch-inset-xl': `${size600} ${size300} ${size600} ${size300}`,
   'stack-xl': `${size0} ${size0} ${size600} ${size0}`,
   'inline-xl': `${size0} ${size600} ${size0} ${size0}`,
-};
+}
 
 const motion = {
   'duration-slow-01': durationSlow01,
@@ -171,6 +171,6 @@ const motion = {
   'ease-entrance-productive': easeEntranceProductive,
   'ease-exit-expressive': easeExitExpressive,
   'ease-exit-productive': easeExitProductive,
-};
+}
 
-export { color, space, font, motion, border, shadow, lineHeight };
+export { color, space, font, motion, border, shadow, lineHeight }

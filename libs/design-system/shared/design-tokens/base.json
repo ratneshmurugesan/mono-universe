@@ -1,102 +1,102 @@
 {
-    "color": {
-        "black": {
-            "regular": "#000709"
-        },
-        "white": {
-            "regular": "#FFFFFF"
-        },
-        "purple": {
-            "lightest": "#F3EAFB",
-            "lighter": "#DCBFF3",
-            "light": "#DCBFF3",
-            "regular": "#9F4CDF",
-            "dark": "#3B3562",
-            "darker": "#3B3562"
-        }
+  "color": {
+    "black": {
+      "regular": "#000709"
     },
-    "breakpoint": {
-        "xs": "20rem",
-        "sm": "30rem",
-        "m": "48rem",
-        "l": "62rem",
-        "xl": "74rem"
+    "white": {
+      "regular": "#FFFFFF"
+    },
+    "purple": {
+      "lightest": "#F3EAFB",
+      "lighter": "#DCBFF3",
+      "light": "#DCBFF3",
+      "regular": "#9F4CDF",
+      "dark": "#3B3562",
+      "darker": "#3B3562"
+    }
+  },
+  "breakpoint": {
+    "xs": "20rem",
+    "sm": "30rem",
+    "m": "48rem",
+    "l": "62rem",
+    "xl": "74rem"
+  },
+  "size": {
+    "0": 0,
+    "100": "0.13rem",
+    "200": "0.25rem",
+    "300": "0.5rem",
+    "400": "1rem",
+    "500": "1.5rem",
+    "600": "2rem",
+    "700": "2.5rem",
+    "800": "3rem",
+    "900": "4rem"
+  },
+  "border": {
+    "radius": {
+      "none": 0,
+      "base": "0.5rem",
+      "secondary": "0.25rem",
+      "circle": "50%"
+    }
+  },
+  "font": {
+    "family": {
+      "roboto": "roboto",
+      "helvetica": "helvetica"
     },
     "size": {
-        "0": 0,
-        "100": "0.13rem",
-        "200": "0.25rem",
-        "300": "0.5rem",
-        "400": "1rem",
-        "500": "1.5rem",
-        "600": "2rem",
-        "700": "2.5rem",
-        "800": "3rem",
-        "900": "4rem"
+      "100": "0.65rem",
+      "200": "0.75rem",
+      "250": "0.85rem",
+      "300": "1rem",
+      "400": "1.5rem",
+      "500": "1.75rem",
+      "600": "2rem",
+      "700": "2.5rem",
+      "800": "3.5rem",
+      "900": "6.25rem",
+      "1000": "9.375rem"
     },
-    "border": {
-        "radius": {
-            "none": 0,
-            "base": "0.5rem",
-            "secondary": "0.25rem",
-            "circle": "50%"
-        }
-    },
-    "font": {
-        "family": {
-            "roboto": "roboto",
-            "helvetica": "helvetica"
-        },
-        "size": {
-            "100": "0.65rem",
-            "200": "0.75rem",
-            "250": "0.85rem",
-            "300": "1rem",
-            "400": "1.5rem",
-            "500": "1.75rem",
-            "600": "2rem",
-            "700": "2.5rem",
-            "800": "3.5rem",
-            "900": "6.25rem",
-            "1000": "9.375rem"
-        },
-        "weight": {
-            "light": 300,
-            "regular": 400,
-            "semibold": 600,
-            "bold": 700,
-            "extrabold": 800
-        }
-    },
-    "duration": {
-        "fast": {
-            "01": "70ms",
-            "02": "110ms"
-        },
-        "medium": {
-            "01": "150ms",
-            "02": "240ms"
-        },
-        "slow": {
-            "01": "400ms",
-            "02": "700ms"
-        }
-    },
-    "ease": {
-        "standard": {
-            "productive": "cubic-bezier(0.2, 0, 0.38, 0.9)",
-            "expressive": "cubic-bezier(0.4, 0.14, 0.3, 1)"
-        },
-        "entrance": {
-            "productive": "cubic-bezier(0, 0, 0.38, 0.9)",
-            "expressive": "cubic-bezier(0, 0, 0.3, 1)"
-        },
-        "exit": {
-            "productive": "cubic-bezier(0.2, 0, 1, 0.9)",
-            "expressive": "cubic-bezier(0.4, 0.14, 1, 1)"
-        },
-        "in": "cubic-bezier(0.5, 0, 1, 1)",
-        "out": "cubic-bezier(0, 0, 0.5, 1)",
-        "in-out": "cubic-bezier(0.5, 0, 0.5, 1)"
+    "weight": {
+      "light": 300,
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
     }
+  },
+  "duration": {
+    "fast": {
+      "01": "70ms",
+      "02": "110ms"
+    },
+    "medium": {
+      "01": "150ms",
+      "02": "240ms"
+    },
+    "slow": {
+      "01": "400ms",
+      "02": "700ms"
+    }
+  },
+  "ease": {
+    "standard": {
+      "productive": "cubic-bezier(0.2, 0, 0.38, 0.9)",
+      "expressive": "cubic-bezier(0.4, 0.14, 0.3, 1)"
+    },
+    "entrance": {
+      "productive": "cubic-bezier(0, 0, 0.38, 0.9)",
+      "expressive": "cubic-bezier(0, 0, 0.3, 1)"
+    },
+    "exit": {
+      "productive": "cubic-bezier(0.2, 0, 1, 0.9)",
+      "expressive": "cubic-bezier(0.4, 0.14, 1, 1)"
+    },
+    "in": "cubic-bezier(0.5, 0, 1, 1)",
+    "out": "cubic-bezier(0, 0, 0.5, 1)",
+    "in-out": "cubic-bezier(0.5, 0, 0.5, 1)"
+  }
 }
