@@ -2,7 +2,7 @@ module.exports = {
   displayName: 'design-system-core',
   preset: '../../../jest.preset.ts',
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest',
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/design-system/core',
@@ -14,4 +14,6 @@ module.exports = {
       statements: 100,
     },
   },
+  testEnvironment: 'jsdom',
+  resolver: '@nrwl/jest/plugins/resolver',
 }
