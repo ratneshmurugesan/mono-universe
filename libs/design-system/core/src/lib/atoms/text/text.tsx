@@ -20,15 +20,12 @@ const opacityEffect = {
   },
 }
 
-/* eslint-disable-next-line */
-export interface TextProps {}
-
 const StyledText = styled.div`
   ${customStyle}
   ${opacityEffect}
 `
 
-export function Text(props: TextProps) {
+export function Text() {
   return (
     <StyledText>
       <h1>First Text!</h1>

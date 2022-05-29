@@ -1,17 +1,14 @@
-import { ReactNode, useRef } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import { useButton } from 'react-aria'
-
-export interface ButtonProps {
-  children: ReactNode
-}
+import { AriaButtonProps } from '@react-types/button'
 
 const StyledButton = styled.button``
 
-export function Button(props: ButtonProps) {
+export function Button(props: AriaButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const { buttonProps } = useButton(props, ref)
-  const { children }: { children: ReactNode } = props
+  const { children } = props
   return (
     <StyledButton {...buttonProps} ref={ref}>
       {children}

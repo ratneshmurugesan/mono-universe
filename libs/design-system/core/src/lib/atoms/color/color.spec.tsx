@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 
-import Color from './color'
+import { Primary } from './color.stories'
 
 describe('Color', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Color />)
+    const { baseElement } = render(<Primary {...Primary.args} />)
     expect(baseElement).toBeTruthy()
   })
 })
