@@ -2,5 +2,6 @@
   "version": 2,
   "projects": {
     "design-system-core": "libs/design-system/core"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
