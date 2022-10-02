@@ -1,9 +1,9 @@
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
 // import { useCustomCursor } from "../../hooks/useCustomCursor";
-import { useCustomGltf } from "../../hooks/useCustomGltf";
-import { useCustomSnapshot } from "../../hooks/useCustomSnapshot";
-import { useCustomState } from "../../hooks/useCustomState";
+import { useCustomGltf } from '../../hooks/useCustomGltf'
+import { useCustomSnapshot } from '../../hooks/useCustomSnapshot'
+import { useCustomState } from '../../hooks/useCustomState'
 // import { auto, getCursor } from "../../svgs";
 
 export function Shoe() {
@@ -21,14 +21,14 @@ export function Shoe() {
     rotation: {
       x: 0,
       y: 0,
-      z: 0
+      z: 0,
     },
     position: {
       x: 0,
       y: 0,
-      z: 0
-    }
-  });
+      z: 0,
+    },
+  })
 
   // console.log({ nodes, materials });
 
@@ -46,19 +46,67 @@ export function Shoe() {
     <group
       ref={ref}
       dispose={null}
-    // onPointerOver={handleOnPointerOver}
-    // onPointerOut={handleOnPointerOut}
-    // onPointerMissed={handleOnPointerMissed}
-    // onClick={handleOnPointerClick}
+      // onPointerOver={handleOnPointerOver}
+      // onPointerOut={handleOnPointerOut}
+      // onPointerMissed={handleOnPointerMissed}
+      // onClick={handleOnPointerClick}
     >
-      <mesh receiveShadow castShadow geometry={nodes.shoe.geometry} material={materials.laces} material-color={snap.items.laces} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_1.geometry} material={materials.mesh} material-color={snap.items.mesh} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_2.geometry} material={materials.caps} material-color={snap.items.caps} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_3.geometry} material={materials.inner} material-color={snap.items.inner} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_4.geometry} material={materials.sole} material-color={snap.items.sole} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_5.geometry} material={materials.stripes} material-color={snap.items.stripes} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_6.geometry} material={materials.band} material-color={snap.items.band} />
-      <mesh receiveShadow castShadow geometry={nodes.shoe_7.geometry} material={materials.patch} material-color={snap.items.patch} />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe.geometry}
+        material={materials.laces}
+        material-color={snap.items.laces}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_1.geometry}
+        material={materials.mesh}
+        material-color={snap.items.mesh}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_2.geometry}
+        material={materials.caps}
+        material-color={snap.items.caps}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_3.geometry}
+        material={materials.inner}
+        material-color={snap.items.inner}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_4.geometry}
+        material={materials.sole}
+        material-color={snap.items.sole}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_5.geometry}
+        material={materials.stripes}
+        material-color={snap.items.stripes}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_6.geometry}
+        material={materials.band}
+        material-color={snap.items.band}
+      />
+      <mesh
+        receiveShadow
+        castShadow
+        geometry={nodes.shoe_7.geometry}
+        material={materials.patch}
+        material-color={snap.items.patch}
+      />
     </group>
   )
 }

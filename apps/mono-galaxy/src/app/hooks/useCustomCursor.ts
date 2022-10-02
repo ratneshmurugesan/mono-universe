@@ -1,7 +1,17 @@
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import { getCursor } from '../svgs'
 import { useCustomSnapshot } from './useCustomSnapshot'
 import { useCustomState } from './useCustomState'
+
+type TGroupEvent = {
+  intersections: []
+  stopPropagation: () => void
+  object: {
+    material: {
+      name: SetStateAction<null>
+    }
+  }
+}
 
 export const useCustomCursor = () => {
   const { state } = useCustomState()
@@ -23,21 +33,21 @@ export const useCustomCursor = () => {
     }
   }, [hovered, snap])
 
-  const handleOnPointerOver = (e: any) => (
-    e.stopPropagation(), setHoveredObjName(e.object.material.name)
-  )
-
-  const handleOnPointerClick = (e: any) => {
+  const handleOnPointerOver = (e: TGroupEvent) => {
     e.stopPropagation()
-    const name = e.object.material.name
-
-    // console.log('handleOnMaterialClick', { e, name })
-    state.current = name
+    setHoveredObjName(e.object.material.name)
   }
 
-  const handleOnPointerMissed = (e: any) => (state.current = null)
+  const handleOnPointerClick = (e: TGroupEvent) => {
+    e.stopPropagation()
+    // const name = e.object.material.name
+    // console.log('handleOnMaterialClick', { e, name })
+    // state.current = name
+  }
 
-  const handleOnPointerOut = (e: any) =>
+  const handleOnPointerMissed = () => (state.current = null)
+
+  const handleOnPointerOut = (e: TGroupEvent) =>
     e.intersections.length === 0 && setHoveredObjName(null)
 
   return {
