@@ -22,7 +22,16 @@
   "generators": {
     "@nrwl/react": {
       "application": {
+        "style": "none",
+        "linter": "eslint",
         "babel": true
+      },
+      "component": {
+        "style": "none"
+      },
+      "library": {
+        "style": "none",
+        "linter": "eslint"
       }
     }
   },
@@ -30,6 +39,10 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
-  }
+  },
+  "defaultProject": "mono-galaxy"
 }
