@@ -1,3 +1,4 @@
+import { color } from '@mono-universe/design-system/shared/design-tokens'
 import { proxy } from 'valtio'
 import { TModelState } from '../types'
 
@@ -7,7 +8,7 @@ export const useCustomState = () => {
   const state: TModelState = proxy({
     current: null,
     items: {
-      laces: '#ffffff',
+      laces: color.red,
       mesh: '#ffffff',
       caps: '#ffffff',
       inner: '#ffffff',

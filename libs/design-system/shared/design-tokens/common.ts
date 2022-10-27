@@ -7,6 +7,8 @@ import {
   border as _border,
 } from './base.json'
 
+import { color_base_red } from '../_variables.json'
+
 const size0 = _size[0]
 const size100 = _size[100]
 const size200 = _size[200]
@@ -58,6 +60,8 @@ const color = {
   purple: _color.purple.regular,
   'purple-dark': _color.purple.dark,
   'purple-darker': _color.purple.darker,
+
+  red: color_base_red,
 }
 
 const font = {
