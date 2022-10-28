@@ -7,7 +7,10 @@ import {
   border as _border,
 } from './base.json'
 
-import { color_base_red } from '../_variables.json'
+import {
+  color_base_red,
+  asset_image_ratnesh_murugesan_logos_transparent,
+} from '../_variables.json'
 
 const size0 = _size[0]
 const size100 = _size[100]
@@ -177,4 +180,8 @@ const motion = {
   'ease-exit-productive': easeExitProductive,
 }
 
-export { color, space, font, motion, border, shadow, lineHeight }
+const asset = {
+  asset_image_ratnesh_murugesan_logos_transparent,
+}
+
+export { color, space, font, motion, border, shadow, lineHeight, asset }

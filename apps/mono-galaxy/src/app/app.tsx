@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { ContactShadows, Environment, OrbitControls } from '@react-three/drei'
 import Shoe from './components/shoe'
 import ColorPicker from './components/color-picker'
+import { LogoImage } from './components/logo-image'
 
 const canvasStyle = {
   width: '100%',
@@ -13,6 +14,7 @@ const canvasStyle = {
 export default function App() {
   return (
     <div>
+      <LogoImage />
       <Canvas
         shadows
         camera={{ position: [0, 0, 4], fov: 40 }}
