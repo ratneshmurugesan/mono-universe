@@ -1,9 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "design-system-core": "libs/design-system/core",
-    "mono-galaxy": "apps/mono-galaxy",
-    "mono-galaxy-e2e": "apps/mono-galaxy-e2e"
+    "design-system-core": "libs/design-system/core"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
