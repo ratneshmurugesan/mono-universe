@@ -10,6 +10,9 @@ import {
 import {
   color_base_red,
   asset_image_ratnesh_murugesan_logos_transparent,
+  asset_image_ratnesh_murugesan_logos_white,
+  asset_font_roboto,
+  asset_icon_lightning_ring,
 } from '../_variables.json'
 
 const size0 = _size[0]
@@ -68,7 +71,7 @@ const color = {
 }
 
 const font = {
-  'family-primary': _font.family.roboto,
+  'family-primary': asset_font_roboto,
   'family-secondary': _font.family.helvetica,
 
   'size-h1': fontSize700,
@@ -182,6 +185,8 @@ const motion = {
 
 const asset = {
   asset_image_ratnesh_murugesan_logos_transparent,
+  asset_image_ratnesh_murugesan_logos_white,
+  asset_icon_lightning_ring,
 }
 
 export { color, space, font, motion, border, shadow, lineHeight, asset }
