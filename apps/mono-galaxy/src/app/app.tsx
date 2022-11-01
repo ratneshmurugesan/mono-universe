@@ -1,40 +1,57 @@
 // import { Route, Routes, Link } from 'react-router-dom'
 
-import { asset, font } from "@mono-universe/design-system/shared/design-tokens";
-import styled, { createGlobalStyle } from "styled-components"
-import useSound from 'use-sound';
+import { asset, font } from '@mono-universe/design-system/shared/design-tokens'
+import { useSoundSystem } from '@mono-universe/sound-system'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`  
   @font-face {
     font-family: 'ratnesh-roboto';
     src: url(data:font/ttf;charset=utf-8;base64,${font['family-primary']});
   }
-`;
+`
 
 const buttonLightProps = `
   box-shadow: inset -4.08px -4.08px 4.08px rgba(255, 255, 255, 0.7), inset 6.125px 6.125px 4.08px rgba(174, 174, 192, 0.2);
-`;
+`
 
 const NeuButton = styled.button`
-background: linear-gradient(135deg, rgba(249, 243, 197, 0.6) 0%, rgba(255, 255, 255, 0) 100%),#F0F1F5;
-  box-shadow: -4.08px -4.08px 12.25px #ffffff, 6.125px 6.125px 12.25px rgb(174 174 192 / 40%), inset 0px 0px 0px 1px rgb(255 255 255 / 20%);
-border-radius: 25%;
-aspect-ratio: 1 / 1;
-padding: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-border: 0;
-font-weight: 800;
+  background: linear-gradient(
+      135deg,
+      rgba(249, 243, 197, 0.6) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f0f1f5;
+  box-shadow: -4.08px -4.08px 12.25px #ffffff,
+    6.125px 6.125px 12.25px rgb(174 174 192 / 40%),
+    inset 0px 0px 0px 1px rgb(255 255 255 / 20%);
+  border-radius: 25%;
+  aspect-ratio: 1 / 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  font-weight: 800;
 
-&:hover {
+  &:hover {
     cursor: pointer;
-    background: linear-gradient(315deg, rgba(249, 243, 197, 0.6) 0%, rgba(255, 255, 255, 0) 100%),#F0F1F5;
+    background: linear-gradient(
+        315deg,
+        rgba(249, 243, 197, 0.6) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      #f0f1f5;
   }
 
-&:active {
+  &:active {
     cursor: pointer;
-    background: linear-gradient(315deg, rgba(249, 243, 197, 0.6) 0%, rgba(255, 255, 255, 0) 100%),#F0F1F5;
+    background: linear-gradient(
+        315deg,
+        rgba(249, 243, 197, 0.6) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      #f0f1f5;
     ${buttonLightProps}
   }
 `
@@ -42,9 +59,9 @@ font-weight: 800;
 const NeuText = styled.p`
   font-family: 'ratnesh-roboto';
   ${NeuButton}:active & {
-      transform: scale(0.9);
+    transform: scale(0.9);
   }
-`;
+`
 
 // const NeuHeading = styled.p`
 // font-family: 'ratnesh-roboto';
@@ -86,46 +103,41 @@ const ImgIcon = styled.img`
   flex-wrap: wrap;
   margin: 10px;
   ${NeuButton}:active & {
-      transform: scale(0.9);
+    transform: scale(0.9);
   }
 `
 
 export function App() {
-  const [playOnButtonClick] = useSound("assets/ui-hover.mp3",
-    {
-      playbackRate: 2,
-      volume: 1
-    });
-  const [playOnButtonRelease] = useSound("assets/ui-hover.mp3",
-    {
-      playbackRate: 3,
-      volume: 0.75
-    });
+  const { playOnButtonClick, playOnButtonRelease } = useSoundSystem()
 
-  const handleOnMouseDown = () => playOnButtonClick();
+  const handleOnMouseDown = () => playOnButtonClick()
 
-  const handleOnMouseUp = () => playOnButtonRelease();
+  const handleOnMouseUp = () => playOnButtonRelease()
 
-  return <BgDiv>
-    <GlobalStyle />
-    <WrapperDiv>
-      <ImgLogo
-        src={`data:image/png;base64,${asset.asset_image_ratnesh_murugesan_logos_transparent}`}
-        alt="asset_image_ratnesh_murugesan_logos_transparent"
-        width={350}
-      />
-      <NeuButton
-        type="submit"
-        onMouseDown={handleOnMouseDown}
-        onMouseUp={handleOnMouseUp}
-      >
-        <ImgIcon src={`data:image/svg+xml;base64,${asset.asset_icon_lightning_ring}`} alt="asset_icon_lightning_ring" width={40} />
-      </NeuButton>
-    </WrapperDiv>
-    <NeuText>
-      ...sound-supported application is under construction...
-    </NeuText>
-  </BgDiv>
+  return (
+    <BgDiv>
+      <GlobalStyle />
+      <WrapperDiv>
+        <ImgLogo
+          src={`data:image/png;base64,${asset.asset_image_ratnesh_murugesan_logos_transparent}`}
+          alt="asset_image_ratnesh_murugesan_logos_transparent"
+          width={350}
+        />
+        <NeuButton
+          type="submit"
+          onMouseDown={handleOnMouseDown}
+          onMouseUp={handleOnMouseUp}
+        >
+          <ImgIcon
+            src={`data:image/svg+xml;base64,${asset.asset_icon_lightning_ring}`}
+            alt="asset_icon_lightning_ring"
+            width={40}
+          />
+        </NeuButton>
+      </WrapperDiv>
+      <NeuText>...sound-supported application is under construction...</NeuText>
+    </BgDiv>
+  )
 }
 
 export default App

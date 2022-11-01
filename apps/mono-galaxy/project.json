@@ -18,7 +18,12 @@
         "tsConfig": "apps/mono-galaxy/tsconfig.app.json",
         "assets": [
           "apps/mono-galaxy/src/favicon.ico",
-          "apps/mono-galaxy/src/assets"
+          "apps/mono-galaxy/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/sound-system/assets",
+            "output": "./assets/"
+          }
         ],
         "styles": [],
         "scripts": [],

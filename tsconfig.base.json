@@ -21,7 +21,8 @@
       ],
       "@mono-universe/design-system/shared/design-tokens": [
         "libs/design-system/shared/design-tokens/index.ts"
-      ]
+      ],
+      "@mono-universe/sound-system": ["libs/sound-system/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
