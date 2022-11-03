@@ -15,15 +15,7 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {
-      "@mono-universe/design-system/core": [
-        "libs/design-system/core/src/index.ts"
-      ],
-      "@mono-universe/design-system/shared/design-tokens": [
-        "libs/design-system/shared/design-tokens/index.ts"
-      ],
-      "@mono-universe/sound-system": ["libs/sound-system/src/index.ts"]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
