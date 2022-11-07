@@ -1,0 +1,24 @@
+{
+  "name": "frontend-portfolio-web",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/frontend/portfolio/web/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/frontend/portfolio/web/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/frontend/portfolio/web"],
+      "options": {
+        "jestConfig": "libs/frontend/portfolio/web/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

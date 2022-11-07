@@ -43,5 +43,6 @@
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
-  }
+  },
+  "defaultProject": "my-portfolio-web-app"
 }

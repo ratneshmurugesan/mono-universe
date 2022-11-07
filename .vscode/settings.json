@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Buildable"]
+  "cSpell.words": ["Buildable"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
