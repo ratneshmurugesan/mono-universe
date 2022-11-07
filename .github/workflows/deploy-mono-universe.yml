@@ -10,7 +10,7 @@ on: [push]
 
 # List of jobs
 jobs:
-  mono-univers-deployment:
+  mono-universe-deployment:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
