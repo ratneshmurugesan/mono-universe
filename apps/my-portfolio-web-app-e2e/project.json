@@ -7,7 +7,7 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/my-portfolio-web-app-e2e/cypress.json",
+        "cypressConfig": "apps/my-portfolio-web-app-e2e/cypress.config.ts",
         "devServerTarget": "my-portfolio-web-app:serve:development",
         "testingType": "e2e"
       },
