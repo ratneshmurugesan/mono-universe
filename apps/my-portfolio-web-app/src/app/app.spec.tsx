@@ -23,7 +23,6 @@ test('true positive', async () => {
   render(<App />)
   // expect(screen.getByText(/wel/i)).not.toBeInTheDocument()
   expect(screen.getByText(/Welcome/i)).toBeInTheDocument()
-
 })
 
 test('false positive', async () => {
@@ -33,8 +32,7 @@ test('false positive', async () => {
   const user = userEvent.setup()
   await user.click(screen.getByText(/contact/i))
   // expect(screen.getByText(/Z!/i)).not.toBeInTheDocument();
-  expect(screen.getByText(/contact!/i)).toBeInTheDocument();
-
+  expect(screen.getByText(/contact!/i)).toBeInTheDocument()
 })
 
 test('true negative', async () => {
@@ -43,7 +41,7 @@ test('true negative', async () => {
 
   const user = userEvent.setup()
   await user.click(screen.getByText(/contact/i))
-  expect(screen.getByText(/Welcome to contact!/i)).toBeInTheDocument();
+  expect(screen.getByText(/Welcome to contact!/i)).toBeInTheDocument()
 })
 
 test('false negative', async () => {
@@ -53,5 +51,5 @@ test('false negative', async () => {
   const user = userEvent.setup()
 
   await user.click(screen.getByText(/contact/i))
-  expect(screen.getByText(/Welcome to/i)).toBeInTheDocument();
+  expect(screen.getByText(/Welcome to/i)).toBeInTheDocument()
 })

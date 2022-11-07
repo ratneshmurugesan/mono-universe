@@ -9,7 +9,9 @@ export function TabLinks({ routeData }: ITabLinks) {
   return (
     <>
       {routeData.map((obj) => (
-        <NavLink key={obj.id} to={`/${obj['path']}`}>{obj['name']}</NavLink>
+        <NavLink key={obj.id} to={`/${obj['path']}`}>
+          {obj['name']}
+        </NavLink>
       ))}
     </>
   )

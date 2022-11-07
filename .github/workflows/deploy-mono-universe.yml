@@ -10,7 +10,7 @@ on: [push]
 
 # List of jobs
 jobs:
-  chromatic-deployment:
+  mono-univers-deployment:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
