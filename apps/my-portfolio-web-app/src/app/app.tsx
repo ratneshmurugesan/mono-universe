@@ -1,17 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Routes } from 'react-router-dom'
 
-import { portfolioShell } from '@mono-universe/frontend/portfolio/web'
+import { portfolioShellRoutes, TabLinks } from '@mono-universe/frontend/portfolio/web'
 
 export function App() {
-  const { portfolioShellRoutes } = portfolioShell
-  const portfolioRoutes = portfolioShellRoutes.map(({ id, path, element }) => {
-    const Element = element
-    return <Route key={id} path={path} element={<Element />} />
-  })
-  const allRoutes = [...portfolioRoutes]
+  const allRoutes = [...portfolioShellRoutes]
 
   return (
     <Router>
+      <TabLinks />
       <Routes>{allRoutes}</Routes>
     </Router>
   )

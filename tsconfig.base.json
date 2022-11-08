@@ -19,21 +19,16 @@
     "baseUrl": ".",
     "paths": {
       "@mono-universe/backend/api": ["libs/backend/api/src/index.ts"],
-      "@mono-universe/frontend/portfolio/mobile": [
-        "libs/frontend/portfolio/mobile/src/index.ts"
-      ],
-      "@mono-universe/frontend/portfolio/web": [
-        "libs/frontend/portfolio/web/src/index.ts"
-      ],
+      "@mono-universe/frontend/portfolio/mobile": ["libs/frontend/portfolio/mobile/src/index.ts"],
+      "@mono-universe/frontend/portfolio/web": ["libs/frontend/portfolio/web/src/index.ts"],
       "@mono-universe/frontend/shared/design-system": [
         "libs/frontend/shared/design-system/src/index.ts"
       ],
-      "@mono-universe/frontend/shared/hooks": [
-        "libs/frontend/shared/hooks/src/index.ts"
-      ],
+      "@mono-universe/frontend/shared/hooks": ["libs/frontend/shared/hooks/src/index.ts"],
       "@mono-universe/frontend/shared/sound-system": [
         "libs/frontend/shared/sound-system/src/index.ts"
       ],
+      "@mono-universe/frontend/shared/utils": ["libs/frontend/shared/utils/src/index.ts"],
       "@mono-universe/shared/dtos": ["libs/shared/dtos/src/index.ts"]
     }
   },

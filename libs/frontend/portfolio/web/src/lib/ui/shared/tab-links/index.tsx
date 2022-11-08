@@ -1,20 +1,21 @@
 import { NavLink } from 'react-router-dom'
-import { TRouteData } from '../../../types'
+import { routeData } from '../../../data-access'
+import { TRouteObj } from '../../../types'
 
 interface ITabLinks {
-  routeData: TRouteData[]
+  routesDataLink?: TRouteObj[] | []
 }
 
-export function TabLinks({ routeData }: ITabLinks) {
+export function TabLinks({ routesDataLink }: ITabLinks) {
+  const routesForLink = routesDataLink?.length ? routesDataLink : routeData
   return (
     <>
-      {routeData.map((obj) => (
-        <NavLink key={obj.id} to={`/${obj['path']}`}>
+      {routesForLink.map(obj => (
+        // <NavLink key={obj.id} to={`/${obj['path']}`}> // with slash, things work differently
+        <NavLink key={obj.id} to={`${obj['path']}`}>
           {obj['name']}
         </NavLink>
       ))}
     </>
   )
 }
-
-export default TabLinks

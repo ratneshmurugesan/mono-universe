@@ -6,8 +6,7 @@ const cypressJsonConfig = {
   fixturesFolder: './src/fixtures',
   video: true,
   videosFolder: '../../dist/cypress/apps/my-portfolio-web-app-e2e/videos',
-  screenshotsFolder:
-    '../../dist/cypress/apps/my-portfolio-web-app-e2e/screenshots',
+  screenshotsFolder: '../../dist/cypress/apps/my-portfolio-web-app-e2e/screenshots',
   chromeWebSecurity: false,
   specPattern: 'src/e2e/**/*.cy.{js,jsx,ts,tsx}',
   supportFile: 'src/support/e2e.ts',

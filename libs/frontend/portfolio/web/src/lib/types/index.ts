@@ -1,19 +1,11 @@
-import {
-  PathRouteProps,
-  LayoutRouteProps,
-  IndexRouteProps,
-} from 'react-router-dom'
-
-export type TRouteObjProps = JSX.IntrinsicAttributes &
-  (PathRouteProps | LayoutRouteProps | IndexRouteProps)
+import { RouteProps } from 'react-router-dom'
 
 export type TRouteElementMap = {
   [key: string]: () => JSX.Element
 }
 
-export type TRouteData = {
+export type TRouteObj = {
   id: string
   name: string
-  path: string
-  element?: JSX.Element
-}
+  subPages: TRouteObj[]
+} & RouteProps
