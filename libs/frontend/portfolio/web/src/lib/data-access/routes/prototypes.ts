@@ -5,22 +5,24 @@ export const prototypeRoutes = {
   subPages: [
     {
       id: 'prototypeA',
-      name: 'Prototype A',
-      path: 'prototypeA',
-      subPages: [
-        {
-          id: 'prototypeAX',
-          name: 'Prototype AX',
-          path: ':prototypeAX', // dynamic route
-          subPages: [],
-        },
-      ],
+      name: 'Button + UX sound',
+      // path: 'button-with-ux-sound',
+      path: '',
+      index: true,
+      subPages: [],
     },
     {
       id: 'prototypeB',
-      name: 'Prototype B',
+      name: 'Button + Modal + UX sound',
       path: 'prototypeB',
-      subPages: [],
+      subPages: [
+        {
+          id: 'prototypeX',
+          name: 'Prototype X',
+          path: ':prototypeX', // dynamic route
+          subPages: [],
+        },
+      ],
     },
   ],
 }

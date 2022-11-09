@@ -11,4 +11,5 @@ export const StyledModalUnderlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'ratnesh-roboto';
 `

@@ -3,8 +3,8 @@ import { MonoButton } from '.'
 
 describe('MonoButton', () => {
   it('should render successfully', () => {
-    render(<MonoButton onPress={() => null}>Test Mono button</MonoButton>)
-    const baseElement = screen.getByRole('button', { name: /test/i })
+    render(<MonoButton onPress={() => null} />)
+    const baseElement = screen.getByRole('button', {})
     expect(baseElement).toHaveProperty('type', 'button')
   })
 })

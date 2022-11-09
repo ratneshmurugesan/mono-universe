@@ -1,3 +1,5 @@
+import { MonoText } from '@mono-universe/frontend/shared/design-system'
+
 export const NotFound = () => {
-  return <div>404 - Not Found</div>
+  return <MonoText variant="heading2">404 - Not Found</MonoText>
 }

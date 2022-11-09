@@ -16,6 +16,6 @@
     "**/*.test.jsx",
     "**/*.spec.jsx",
     "**/*.d.ts",
-    "src/lib/atoms/mono-modal/index"
+    "src/lib/molecules/mono-modal/index"
   ]
 }

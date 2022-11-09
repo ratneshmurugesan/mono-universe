@@ -1,24 +1,18 @@
-import { MonoButton, MonoModal } from '@mono-universe/frontend/shared/design-system'
-import { useReactStately } from '@mono-universe/frontend/shared/hooks'
-import { Outlet } from 'react-router-dom'
+import { MonoButton, MonoFlexBox, MonoText } from '@mono-universe/frontend/shared/design-system'
+import { useSoundSystem } from '@mono-universe/frontend/shared/sound-system'
 
 export const PrototypeA = () => {
-  const { useOverlayTriggerState } = useReactStately()
-  const state = useOverlayTriggerState({
-    type: 'dialog',
-  })
-
-  console.log({ state })
+  const { playOnButtonClick, playOnButtonRelease } = useSoundSystem()
+  const handleOnMouseDown = () => playOnButtonClick()
+  const handleOnMouseUp = () => playOnButtonRelease()
   return (
-    <>
-      <div>PrototypeA</div>
-      <MonoButton onPress={() => state.open()}>Open Dialog</MonoButton>
-      <Outlet />
-      {state.isOpen && (
-        <MonoModal title="Test" isOpen onClose={() => state.close()} isDismissable>
-          Hi
-        </MonoModal>
-      )}
-    </>
+    <MonoFlexBox variant="flexCol">
+      <MonoText variant="display">Simple button (better UX with sound)</MonoText>
+      <MonoButton
+        onPress={() => null}
+        onPressStart={handleOnMouseDown}
+        onPressEnd={handleOnMouseUp}
+      />
+    </MonoFlexBox>
   )
 }
