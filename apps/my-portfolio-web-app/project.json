@@ -18,7 +18,12 @@
         "tsConfig": "apps/my-portfolio-web-app/tsconfig.app.json",
         "assets": [
           "apps/my-portfolio-web-app/src/favicon.ico",
-          "apps/my-portfolio-web-app/src/assets"
+          "apps/my-portfolio-web-app/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/frontend/shared/sound-system/assets",
+            "output": "./assets/sounds"
+          }
         ],
         "styles": [],
         "scripts": [],
