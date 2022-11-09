@@ -11,7 +11,8 @@ export function TabLinks({ routesDataLink }: ITabLinks) {
   return (
     <>
       {routesForLink.map(obj => (
-        // <NavLink key={obj.id} to={`/${obj['path']}`}> // with slash, things work differently
+        // <NavLink key={obj.id} to={`/${obj['path']}`}> // with slash, things work differently - absolute links
+        /* below, without slash - relative links */
         <NavLink key={obj.id} to={`${obj['path']}`}>
           {obj['name']}
         </NavLink>

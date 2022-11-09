@@ -1,24 +1,6 @@
-import { TRouteObj } from '../types'
+import { TRouteObj } from '../../types'
+import { prototypeRoutes } from './prototypes'
 
-const prototypeRoutes = {
-  id: 'prototypes',
-  name: 'Prototypes',
-  path: 'prototypes',
-  subPages: [
-    {
-      id: 'prototypeA',
-      name: 'Prototype A',
-      path: 'prototypeA',
-      subPages: [],
-    },
-    {
-      id: 'prototypeB',
-      name: 'Prototype B',
-      path: 'prototypeB',
-      subPages: [],
-    },
-  ],
-}
 export const routeData: TRouteObj[] = [
   {
     id: 'home',

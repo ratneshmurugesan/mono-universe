@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes } from 'react-router-dom'
 
 import { portfolioShellRoutes, TabLinks } from '@mono-universe/frontend/portfolio/web'
+import { OverlayProvider } from 'react-aria'
 
 export function App() {
   const allRoutes = [...portfolioShellRoutes]
@@ -8,7 +9,9 @@ export function App() {
   return (
     <Router>
       <TabLinks />
-      <Routes>{allRoutes}</Routes>
+      <OverlayProvider>
+        <Routes>{allRoutes}</Routes>
+      </OverlayProvider>
     </Router>
   )
 }

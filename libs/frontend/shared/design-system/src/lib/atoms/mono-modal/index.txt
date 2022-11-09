@@ -1,0 +1,10 @@
+import { render } from '@testing-library/react'
+import { MonoModal } from '.'
+
+
+describe('MonoModal', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(<MonoModal title={''} isOpen={false} onClose={() => null} isDismissable={false}>A mono-modal fro test</MonoModal>)
+    expect(baseElement).toBeTruthy()
+  })
+})

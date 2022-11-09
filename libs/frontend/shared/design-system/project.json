@@ -1,14 +1,15 @@
 {
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "name": "frontend-shared-design-system",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/frontend/shared/design-system/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/frontend/shared/design-system/**/*.ts"]
+        "lintFilePatterns": ["libs/frontend/shared/design-system/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
@@ -19,6 +20,5 @@
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }
