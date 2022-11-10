@@ -16,6 +16,12 @@ export const routeData: TRouteObj[] = [
     subPages: [],
   },
   {
+    id: 'work',
+    name: 'Work',
+    path: 'work',
+    subPages: [],
+  },
+  {
     id: 'contact',
     name: 'Contact',
     path: 'contact',
