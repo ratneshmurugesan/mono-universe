@@ -8,13 +8,15 @@ import {
   MonoFlexBox,
   MonoGridBox,
   MonoText,
+  portfolioTheme,
 } from '@mono-universe/frontend/shared/design-system'
+import { ThemeProvider } from 'styled-components'
 
 export function App() {
   const allRoutes = [...portfolioRoutes]
 
   return (
-    <>
+    <ThemeProvider theme={portfolioTheme}>
       <GlobalStyle />
       <OverlayProvider>
         <Router>
@@ -37,7 +39,7 @@ export function App() {
           </MonoBox>
         </Router>
       </OverlayProvider>
-    </>
+    </ThemeProvider>
   )
 }
 

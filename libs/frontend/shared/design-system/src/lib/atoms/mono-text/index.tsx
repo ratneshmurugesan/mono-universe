@@ -7,7 +7,7 @@ const common = {
   fontStyle: 'normal',
   textAlign: 'left',
   boxSizing: 'border-box',
-  whiteSpace: 'wrap',
+  whiteSpace: 'normal',
   wordBreak: 'break-word',
   // overflow: 'hidden',
   // textOverflow: 'ellipsis',
@@ -22,7 +22,7 @@ const variants = {
     ...common,
   },
   heading2: {
-    fontSize: 2,
+    fontSize: [3, 4, 5],
     fontWeight: 600,
     ...common,
   },
