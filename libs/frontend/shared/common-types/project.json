@@ -1,0 +1,34 @@
+{
+  "name": "frontend-shared-common-types",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/frontend/shared/common-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/frontend/shared/common-types",
+        "main": "libs/frontend/shared/common-types/src/index.ts",
+        "tsConfig": "libs/frontend/shared/common-types/tsconfig.lib.json",
+        "assets": ["libs/frontend/shared/common-types/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/frontend/shared/common-types/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/frontend/shared/common-types"],
+      "options": {
+        "jestConfig": "libs/frontend/shared/common-types/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

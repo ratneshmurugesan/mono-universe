@@ -11,9 +11,10 @@ import {
   portfolioTheme,
 } from '@mono-universe/frontend/shared/design-system'
 import { ThemeProvider } from 'styled-components'
+import { acmeRoutes } from '@mono-universe/frontend/acme'
 
 export function App() {
-  const allRoutes = [...portfolioRoutes]
+  const allRoutes = [...portfolioRoutes, ...acmeRoutes]
 
   return (
     <ThemeProvider theme={portfolioTheme}>
