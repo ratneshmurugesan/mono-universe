@@ -1,12 +1,11 @@
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
 
 import { MonoLabel, MonoText } from '@mono-universe/frontend/shared/design-system'
 
 import { Table } from '../components/organisms/table'
-import { store } from '../../data-access/store';
+import { store } from '../../data-access/store'
 
 function Home() {
-
   return (
     <Provider store={store}>
       <MonoLabel variant="label">Acme</MonoLabel>
@@ -16,4 +15,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default Home

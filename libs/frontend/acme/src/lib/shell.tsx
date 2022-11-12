@@ -12,6 +12,6 @@ const routeElementMap: TRouteElementMap = {
   acmeHome: LazyAcmeHome,
 }
 
-const acmeShellRoutes = routeData.map((routeObj) => constructRoute(routeElementMap, routeObj))
+const acmeShellRoutes = routeData.map(routeObj => constructRoute(routeElementMap, routeObj))
 
 export const acmeRoutes = acmeShellRoutes
