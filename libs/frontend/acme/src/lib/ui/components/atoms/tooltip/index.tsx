@@ -16,7 +16,6 @@ export const Tooltip = ({ dataKey }: { dataKey: string }) => {
     )
   }
 
-  console.log({ updateColumnAlign, selectedColWidthMap })
   return (
     <StyledTooltip width={selectedColWidthMap[dataKey]}>
       <StyledButtonGroup>

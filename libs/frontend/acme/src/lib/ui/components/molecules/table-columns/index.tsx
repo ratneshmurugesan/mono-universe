@@ -39,7 +39,6 @@ function getColumns({
         rowData: { [key: string]: string }
         dataKey: string
       }) => {
-        console.log({ rowData, dataKey })
         return (
           <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
         )

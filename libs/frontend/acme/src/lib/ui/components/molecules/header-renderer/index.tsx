@@ -8,11 +8,11 @@ export const HeaderRenderer = ({ label, dataKey }: TableHeaderProps & { columnIn
   return targetColumns.includes(dataKey) ? (
     <StyledHeaderCell width={selectedColWidthMap[dataKey]}>
       <Tooltip dataKey={dataKey} />
-      <span>{label}</span>
+      <span data-id={label}>{label}</span>
     </StyledHeaderCell>
   ) : (
     <StyledHeaderCell width={selectedColWidthMap[dataKey]}>
-      <span>{label}</span>
+      <span data-id={label}>{label}</span>
     </StyledHeaderCell>
   )
 }

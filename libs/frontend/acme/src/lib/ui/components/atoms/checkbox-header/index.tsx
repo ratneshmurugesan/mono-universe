@@ -46,6 +46,11 @@ export const CustomHeaderCheckbox = () => {
   }
 
   return (
-    <input type="checkbox" ref={checkboxRef} onChange={e => handleOnHeaderRowCheckboxSelect(e)} />
+    <input
+      name="header-checkbox"
+      type="checkbox"
+      ref={checkboxRef}
+      onChange={e => handleOnHeaderRowCheckboxSelect(e)}
+    />
   )
 }

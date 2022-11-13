@@ -37,7 +37,6 @@ function getColumns({
         rowData: { [key: string]: string }
         dataKey: string
       }) => {
-        console.log({ rowData, dataKey })
         return (
           <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
         )
@@ -141,7 +140,7 @@ export const CustomTable = () => {
                 ref={registerChild}
                 onRowsRendered={onRowsRendered}
                 width={totalWidth}
-                height={300}
+                height={700}
                 headerHeight={60}
                 rowHeight={80}
                 rowCount={rowData.length}

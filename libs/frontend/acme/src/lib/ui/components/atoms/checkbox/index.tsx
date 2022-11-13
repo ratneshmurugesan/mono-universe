@@ -18,6 +18,7 @@ export const CustomCheckbox = ({ rowObj }: { rowObj: TTableRow }) => {
 
   return (
     <input
+      name={rowObj['id']}
       type="checkbox"
       checked={!!rowObj['selected']}
       onChange={e => handleOnRowSelect(e, rowObj['id'])}
