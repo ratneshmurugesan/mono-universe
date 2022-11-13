@@ -1,25 +1,170 @@
-import { useTableData } from '../../../../data-access/hooks/useTableData'
-import { StyledTable, StyledTbody } from '../../../styles'
-import { TableHeadItem } from '../../atoms'
-import { TableRow } from '../../molecules'
+import { useTableData as useCustomTableData } from '../../../../data-access/hooks/useTableData'
+import { StyledCellDiv, StyledTable } from '../../../styles'
 
-export const Table = () => {
-  const { columnData, rowData } = useTableData()
+import { Column, InfiniteLoader, AutoSizer } from 'react-virtualized'
+import '../../../styles.css'
 
+import { CustomCheckbox, CustomHeaderCheckbox, CustomImage } from '../../atoms'
+import { MonoText } from '@mono-universe/frontend/shared/design-system'
+import { HeaderRenderer } from '../../molecules/header-renderer'
+
+function getColumns({
+  selectedColAlignMap,
+  selectedColWidthMap,
+}: {
+  selectedColAlignMap: { [key: string]: string }
+  selectedColWidthMap: { [key: string]: number }
+}) {
+  return [
+    {
+      width: 30,
+      label: <CustomHeaderCheckbox />,
+      dataKey: 'checkbox',
+      cellRenderer: ({ rowData }: { rowData: { [key: string]: string }; dataKey: string }) => (
+        <StyledCellDiv align="center">
+          <CustomCheckbox rowObj={rowData} />
+        </StyledCellDiv>
+      ),
+    },
+    {
+      width: selectedColWidthMap['id'],
+      label: 'id',
+      dataKey: 'id',
+      cellRenderer: ({
+        rowData,
+        dataKey,
+      }: {
+        rowData: { [key: string]: string }
+        dataKey: string
+      }) => {
+        console.log({ rowData, dataKey })
+        return (
+          <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
+        )
+      },
+    },
+    {
+      width: selectedColWidthMap['albumId'],
+      label: 'albumId',
+      dataKey: 'albumId',
+      cellRenderer: function ({
+        rowData,
+        dataKey,
+      }: {
+        rowData: { [key: string]: string }
+        dataKey: string
+      }) {
+        return (
+          <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
+        )
+      },
+    },
+    {
+      width: selectedColWidthMap['thumbnail'],
+      label: 'thumbnail',
+      dataKey: 'thumbnail',
+      cellRenderer: ({
+        rowData,
+        dataKey,
+      }: {
+        rowData: { [key: string]: string }
+        dataKey: string
+      }) => (
+        <StyledCellDiv align={selectedColAlignMap[dataKey]}>
+          <CustomImage rowObj={rowData} />
+        </StyledCellDiv>
+      ),
+    },
+    {
+      width: selectedColWidthMap['title'],
+      label: 'title',
+      dataKey: 'title',
+      cellRenderer: function ({
+        rowData,
+        dataKey,
+      }: {
+        rowData: { [key: string]: string }
+        dataKey: string
+      }) {
+        return (
+          <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
+        )
+      },
+    },
+    {
+      width: selectedColWidthMap['url'],
+      label: 'url',
+      dataKey: 'url',
+      cellRenderer: function ({
+        rowData,
+        dataKey,
+      }: {
+        rowData: { [key: string]: string }
+        dataKey: string
+      }) {
+        return (
+          <StyledCellDiv align={selectedColAlignMap[dataKey]}>{rowData[dataKey]}</StyledCellDiv>
+        )
+      },
+    },
+  ]
+}
+
+export const CustomTable = () => {
+  const {
+    isLoading,
+    rowData,
+    selectedColWidthMap,
+    selectedColAlignMap,
+    totalWidth,
+    loadMoreRows,
+    isRowLoaded,
+    handleOnRowClick,
+  } = useCustomTableData()
+  const columnData = getColumns({ selectedColAlignMap, selectedColWidthMap })
+
+  if (isLoading) return <MonoText variant="heading2">Loading...</MonoText>
+  if (!columnData.length || !rowData.length)
+    return <MonoText variant="paragraph1">No Data!</MonoText>
   return (
-    <StyledTable>
-      <thead>
-        <tr>
-          {columnData.map(item => (
-            <TableHeadItem key={item.heading} item={item} />
-          ))}
-        </tr>
-      </thead>
-      <StyledTbody>
-        {rowData.map(item => (
-          <TableRow key={`${item['id' as keyof typeof item]}`} rowObj={item} column={columnData} />
-        ))}
-      </StyledTbody>
-    </StyledTable>
+    <InfiniteLoader
+      isRowLoaded={isRowLoaded}
+      loadMoreRows={loadMoreRows}
+      rowCount={50000}
+      minimumBatchSize={300}
+    >
+      {({ onRowsRendered, registerChild }) => (
+        <AutoSizer>
+          {() => {
+            return (
+              <StyledTable
+                ref={registerChild}
+                onRowsRendered={onRowsRendered}
+                width={totalWidth}
+                height={300}
+                headerHeight={60}
+                rowHeight={80}
+                rowCount={rowData.length}
+                onRowClick={handleOnRowClick}
+                rowGetter={({ index }: { index: number }) => rowData[index]}
+              >
+                {columnData.map(({ dataKey, ...other }, index) => {
+                  return (
+                    <Column
+                      key={dataKey}
+                      headerRenderer={headerProps => (
+                        <HeaderRenderer {...headerProps} columnIndex={index} />
+                      )}
+                      dataKey={dataKey}
+                      {...other}
+                    />
+                  )
+                })}
+              </StyledTable>
+            )
+          }}
+        </AutoSizer>
+      )}
+    </InfiniteLoader>
   )
 }

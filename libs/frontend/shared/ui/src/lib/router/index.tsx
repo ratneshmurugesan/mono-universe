@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 export const constructRoute = (routeElementMap: TRouteElementMap, routeObj: TRouteObj) => {
   const { id, path, index, subPages } = routeObj
   const _index = index ?? false
-  // console.log({ id, path, index, element, subPages });
   const Element = routeElementMap[routeObj['id']]
   if (!subPages.length)
     return (

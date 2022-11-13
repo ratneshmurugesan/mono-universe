@@ -9,8 +9,6 @@ const common = {
   boxSizing: 'border-box',
   whiteSpace: 'normal',
   wordBreak: 'break-word',
-  // overflow: 'hidden',
-  // textOverflow: 'ellipsis',
   pointerEvents: 'none',
   color: ratnesh_mono_component_button_text_color_idle,
 }

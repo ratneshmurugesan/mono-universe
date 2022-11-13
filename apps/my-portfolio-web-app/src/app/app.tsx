@@ -21,21 +21,13 @@ export function App() {
       <GlobalStyle />
       <OverlayProvider>
         <Router>
-          <MonoBox height="95vh" m="20px">
-            <MonoGridBox
-              justifyContent="space-between"
-              alignItems="center"
-              gridTemplateColumns="1fr 1fr"
-              gridTemplateRows="15% auto"
-              height="100%"
-            >
-              <MonoText variant="display">Ratnesh Murugesan</MonoText>
-              <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
-                <TabLinks />
-              </MonoFlexBox>
-              <MonoGridBox gridColumn="span 2">
-                <Routes>{allRoutes}</Routes>
-              </MonoGridBox>
+          <MonoBox m="20px">
+            <MonoText variant="display">Ratnesh Murugesan</MonoText>
+            <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
+              <TabLinks />
+            </MonoFlexBox>
+            <MonoGridBox gridColumn="span 2">
+              <Routes>{allRoutes}</Routes>
             </MonoGridBox>
           </MonoBox>
         </Router>

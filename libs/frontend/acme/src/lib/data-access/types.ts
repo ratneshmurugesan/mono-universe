@@ -5,15 +5,10 @@ export type TResponse = {
   data: { [key: string]: string | number }[]
   message: string
 }
-export type TSelectionMode = 'all' | 'indeterminate' | ''
+export type TCheckboxSelectionMode = 'all' | 'indeterminate' | 'none'
 export interface IAppState {
   selectedRows: { [key: string]: boolean }
-  selectionMode: TSelectionMode
   albums: TResponse
+  colWidthMap: { [key: string]: number }
+  colAlignMap: { [key: string]: string }
 }
-// export type TPayload = {
-//   selectedRowId?: number
-//   selectedRowCheckedValue?: boolean
-//   IdObj?: { [key: string]: boolean }
-//   selectionMode?: TSelectionMode
-// }

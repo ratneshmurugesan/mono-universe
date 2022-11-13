@@ -1,54 +1,65 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 
-import { TTableCol } from '../../ui/types'
-import { selectAlbums, selectSelectedRows } from '../store/selector'
+import {
+  selectAlbums,
+  selectColWidthMap,
+  selectSelectedRows,
+  selectColAlignMap,
+} from '../store/selector'
 import { useSelector } from 'react-redux'
-import { fetchAlbumData } from '../store/slice'
 import { useAppDispatch, useAppSelector } from '../store'
+import { fetchRequiredAlbumData } from '../api'
+import { updateBodyRowCheckbox } from '../store/slice'
 
 export const useTableData = () => {
   const dispatch = useAppDispatch()
   const selectedAlbums = useAppSelector(selectAlbums)
-  const { isLoading, data, isError, message } = selectedAlbums
+  const { isLoading, data } = selectedAlbums
   const selectedRows = useSelector(selectSelectedRows)
+  const selectedColWidthMap = useAppSelector(selectColWidthMap)
+  const selectedColAlignMap = useAppSelector(selectColAlignMap)
 
-  console.log({ isLoading, data, isError, message })
-  // const selectedSelectionMode = useSelector(selectSelectionMode)
-  // useEffect(() => {
-  //   axios('https://jsonplaceholder.typicode.com/photos')
-  //     .then(res => {
-  //       const enhancedData = res.data.map((obj: TTableRow) => {
-  //         return { ...obj, selected: false }
-  //       })
-  //       setDataTable(enhancedData)
-  //     })
-  //     .catch(err => console.log(err))
-  // }, [])
+  const loadMoreRows = useCallback(
+    ({ startIndex, stopIndex }: { startIndex: number; stopIndex: number }) => {
+      return dispatch(fetchRequiredAlbumData({ startIndex, stopIndex }))
+    },
+    [dispatch],
+  )
+  const handleOnRowClick = ({ rowData }: { rowData: { [key: string]: string } }) => {
+    dispatch(
+      updateBodyRowCheckbox({
+        selectedRowId: rowData['id'],
+        selectedRowCheckedValue: !selectedRows[rowData['id']],
+      }),
+    )
+  }
 
   useEffect(() => {
-    // dispatch(getAllDeliveryManagerDetailsWithProjectAndTaskUsingCustomerUid());
-    dispatch(fetchAlbumData())
+    dispatch(fetchRequiredAlbumData({ startIndex: 0, stopIndex: 1 }))
   }, [dispatch])
 
-  // const enhancedData = dataTable.map((obj: TTableRow) => {
-  //   if (selectedSelectionMode === 'all') return { ...obj, selected: true }
-  //   // if (selectedSelectionMode === 'indeterminate')
-  //   //   return { ...obj, selected: !!selectedRows[obj['id'] as keyof typeof selectedRows] }
-  //   // return { ...obj, selected: selectedRows[obj['id'] as keyof typeof selectedRows] }
-  // })
+  const rowData = data.map(obj => {
+    return { ...obj, selected: selectedRows[obj['id']] }
+  })
 
-  // const rowData = enhancedData.slice(0, 20)
-
-  const columnData: TTableCol = [
-    { heading: 'checkbox', value: 'checkbox', numeric: false, width: '5%' },
-    { heading: 'thumbnail', value: 'thumbnail', numeric: false, width: '5%' },
-    { heading: 'Id', value: 'id', numeric: true, width: 'auto' },
-    { heading: 'Title', value: 'title', numeric: false, width: 'auto' },
-  ]
-  console.log({ selectedRows })
+  function isRowLoaded({ index }: { index: number }) {
+    return !!rowData[index]
+  }
+  const targetColumns: string[] = ['id', 'albumId', 'thumbnail', 'title', 'url']
+  let totalWidth = 100
+  targetColumns.forEach((key: string) => {
+    totalWidth += selectedColWidthMap[key]
+  })
 
   return {
-    rowData: data,
-    columnData,
+    rowData,
+    isLoading,
+    selectedColWidthMap,
+    selectedColAlignMap,
+    targetColumns,
+    totalWidth,
+    isRowLoaded,
+    loadMoreRows,
+    handleOnRowClick,
   }
 }

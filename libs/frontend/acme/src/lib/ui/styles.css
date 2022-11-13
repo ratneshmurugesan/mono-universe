@@ -1,0 +1,6 @@
+@import 'react-virtualized/styles.css';
+
+.ReactVirtualized__Table__headerColumn {
+        outline: auto;
+        padding: 17px 0px;
+}

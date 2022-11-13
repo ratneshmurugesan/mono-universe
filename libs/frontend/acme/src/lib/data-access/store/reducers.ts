@@ -1,26 +1,60 @@
 import { IAppState } from '../types'
 
 export const reducers = {
-  toggleSingle: (state: IAppState, action: { payload: any }) => {
-    console.log('slice', { action })
+  updateHeaderCheckBox: (
+    state: IAppState,
+    action: {
+      payload: { selectedRowId: 'header'; selectedRowCheckedValue: boolean }
+    },
+  ) => {
+    const areAllBodyRowsChecked = Object.keys(state.selectedRows)
+      .filter(id => id !== 'header')
+      .every(id => state.selectedRows[id])
+
+    if (action.payload.selectedRowCheckedValue) {
+      Object.keys(state.selectedRows).forEach(id => {
+        state.selectedRows[id] = true
+      })
+    } else if (!action.payload.selectedRowCheckedValue) {
+      Object.keys(state.selectedRows).forEach(id => {
+        state.selectedRows[id] = false
+      })
+    } else if (areAllBodyRowsChecked) {
+      Object.keys(state.selectedRows).forEach(id => {
+        state.selectedRows[id] = true
+      })
+    }
+
     state.selectedRows = {
       ...state.selectedRows,
       [action.payload.selectedRowId]: action.payload.selectedRowCheckedValue,
     }
   },
-  toggleAll: (state: IAppState, action: { payload: any }) => {
-    console.log('slice', { action })
-    const IdObj = { ...action.payload.IdObj }
-    const selectionMode = action.payload.selectionMode
-    Object.keys(action.payload.IdObj).forEach(id => {
-      IdObj[id] = selectionMode === 'all' ? true : false
-    })
+  updateBodyRowCheckbox: (
+    state: IAppState,
+    action: { payload: { selectedRowId: string | number; selectedRowCheckedValue: boolean } },
+  ) => {
     state.selectedRows = {
       ...state.selectedRows,
-      ...IdObj,
+      [action.payload.selectedRowId]: action.payload.selectedRowCheckedValue,
     }
   },
-  updateSelectionMode: (state: IAppState, action: { payload: any }) => {
-    state.selectionMode = action.payload.selectionMode
+  updateColumnWidth: (
+    state: IAppState,
+    action: { payload: { dataKey: string | number; value: number } },
+  ) => {
+    state.colWidthMap = {
+      ...state.colWidthMap,
+      [action.payload.dataKey]: action.payload.value,
+    }
+  },
+  updateColumnAlign: (
+    state: IAppState,
+    action: { payload: { dataKey: string | number; value: string } },
+  ) => {
+    state.colAlignMap = {
+      ...state.colAlignMap,
+      [action.payload.dataKey]: action.payload.value,
+    }
   },
 }

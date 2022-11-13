@@ -1,15 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createSlice } from '@reduxjs/toolkit'
 import { IAppState, TResponse } from '../types'
 import { extraReducers } from './extra-reducers'
 import { reducers } from './reducers'
 
-const phpAxiosInstance = axios.create({ baseURL: 'https://jsonplaceholder.typicode.com/' })
-
-export const fetchAlbumData = createAsyncThunk('fetchAlbumData', async () => {
-  const { data } = await phpAxiosInstance.get('photos')
-  return data
-})
 const commonAPIFields: TResponse = {
   isLoading: false,
   status: 'idle',
@@ -22,8 +15,15 @@ const initialState: IAppState = {
   albums: {
     ...commonAPIFields,
   },
-  selectedRows: {},
-  selectionMode: '',
+  selectedRows: { header: false },
+  colWidthMap: { id: 200, albumId: 200, thumbnail: 200, title: 200, url: 300 },
+  colAlignMap: {
+    id: 'center',
+    albumId: 'center',
+    thumbnail: 'center',
+    title: 'center',
+    url: 'center',
+  },
 }
 
 export const tableSlice = createSlice({
@@ -33,5 +33,6 @@ export const tableSlice = createSlice({
   extraReducers,
 })
 
-export const { toggleSingle, toggleAll, updateSelectionMode } = tableSlice.actions
+export const { updateBodyRowCheckbox, updateHeaderCheckBox, updateColumnWidth, updateColumnAlign } =
+  tableSlice.actions
 export default tableSlice.reducer
