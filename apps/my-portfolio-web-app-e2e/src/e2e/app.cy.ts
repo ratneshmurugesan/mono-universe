@@ -1,13 +1,11 @@
-import { getGreeting } from '../support/app.po'
-
-describe('my-portfolio-web-app', () => {
-  beforeEach(() => cy.visit('/'))
-
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    // cy.login('my-email@something.com', 'myPassword')
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Ratnesh')
+describe('acme inc', () => {
+  it('should  perform interactions', () => {
+    cy.visit('/acme')
+      .get('[aria-rowindex="2"]')
+      .click()
+      .get('[data-id="albumId"]')
+      .trigger('mouseover')
+      .get('[name="header-checkbox"]')
+      .click()
   })
 })
