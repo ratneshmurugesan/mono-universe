@@ -121,7 +121,7 @@
     "url-loader": "^3.0.0"
   },
   "resolutions": {
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.0"
+    "@types/react": "18.0.20",
+    "@types/react-dom": "18.0.6"
   }
 }
