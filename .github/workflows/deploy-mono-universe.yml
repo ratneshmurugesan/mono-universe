@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Run unit & integration tests
-        run: yarn nx run test
+        run: yarn nx run-many --all --target=test
       - name: Run e2e tests
         run: yarn nx run my-portfolio-web-app-e2e:e2e
       #   # 👇 Adds Chromatic as a step in the workflow
