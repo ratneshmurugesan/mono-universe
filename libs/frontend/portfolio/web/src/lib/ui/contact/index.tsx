@@ -8,7 +8,7 @@ export function Contact() {
       <MonoLabel variant="label">Email</MonoLabel>
       <MonoText variant="link">ratnesh.one@gmail.com</MonoText>
       <MonoLabel variant="label">Mobile</MonoLabel>
-      <MonoText variant="link">+91 96777 29298</MonoText>
+      <MonoText variant="link">+91 96777 29198</MonoText>
       <MonoLabel variant="label">Linkedin</MonoLabel>
       <MonoText
         variant="link"
