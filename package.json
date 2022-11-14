@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test",
+    "test": "nx run-many --all --target=test",
     "build-storybook": "yarn nx run design-system-core:build-storybook",
     "chromatic": "chromatic -d dist/storybook/design-system-core",
     "prepare": "husky install",
