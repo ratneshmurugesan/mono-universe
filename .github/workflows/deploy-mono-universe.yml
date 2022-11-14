@@ -4,9 +4,10 @@
 name: 'Deploy mono-universe'
 
 # Event for the workflow
-on: [push]
-      # paths:
-      #   - 'libs/design-system/**'
+on:
+  push:
+    branches:
+      - develop
 
 # List of jobs
 jobs:
