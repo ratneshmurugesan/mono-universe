@@ -3,7 +3,16 @@ import { routeData } from './data-access'
 import { Route } from 'react-router-dom'
 import { TRouteElementMap, TRouteObj } from './types'
 import { lazy, Suspense } from 'react'
-import { Contact, Home, NotFound, PrototypeA, PrototypeX, PrototypeB, Prototypes } from './ui'
+import {
+  Contact,
+  Home,
+  NotFound,
+  PrototypeA,
+  PrototypeX,
+  PrototypeB,
+  Prototypes,
+  PrototypeShoe,
+} from './ui'
 import { Work } from './ui/work'
 
 const dynamicImport = () => import('./ui/about')
@@ -15,6 +24,7 @@ const routeElementMap: TRouteElementMap = {
   prototypeA: PrototypeA,
   prototypeX: PrototypeX,
   prototypeB: PrototypeB,
+  prototypeShoe: PrototypeShoe,
   work: Work,
   contact: Contact,
   about: LazyAbout,

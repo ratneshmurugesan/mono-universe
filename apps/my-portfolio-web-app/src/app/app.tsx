@@ -26,7 +26,7 @@ export function App() {
             <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
               <TabLinks />
             </MonoFlexBox>
-            <MonoGridBox gridColumn="span 2">
+            <MonoGridBox gridColumn="span 2" justifyContent="flex-start">
               <Routes>{allRoutes}</Routes>
             </MonoGridBox>
           </MonoBox>
