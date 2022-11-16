@@ -23,6 +23,11 @@
             "glob": "**/*",
             "input": "libs/frontend/shared/sound-system/assets",
             "output": "./assets/sounds"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/frontend/portfolio/web/src/lib/ui/prototype-shoe/assets",
+            "output": "./assets/glbs"
           }
         ],
         "styles": [],
