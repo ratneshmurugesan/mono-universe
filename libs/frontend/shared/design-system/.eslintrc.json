@@ -8,7 +8,11 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "max-lines": ["error", 150],
+        "max-lines-per-function": ["error", 100],
+        "max-statements-per-line": ["warn", { "max": 2 }]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

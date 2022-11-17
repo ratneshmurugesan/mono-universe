@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import {
+import tokens from '../../tokens/_styles.json'
+const {
   ratnesh_mono_component_button_shadow_idle,
-  ratnesh_mono_component_button_space_idle,
+  ratnesh_mono_core_radius_20,
   ratnesh_mono_component_button_background_color_focussed,
   ratnesh_mono_component_button_background_color_hovered,
-  ratnesh_mono_component_button_radius_idle,
+  ratnesh_mono_core_size_30,
   ratnesh_mono_component_button_background_color_idle,
   ratnesh_mono_component_button_shadow_pressed,
-} from '../../tokens/_styles.json'
+} = tokens
 
 const buttonLightProps = `
   box-shadow: ${ratnesh_mono_component_button_shadow_idle};
@@ -16,9 +17,9 @@ const buttonLightProps = `
 export const StyledButton = styled.button`
   background: ${ratnesh_mono_component_button_background_color_idle};
   box-shadow: ${ratnesh_mono_component_button_shadow_pressed};
-  border-radius: ${ratnesh_mono_component_button_radius_idle};
+  border-radius: ${ratnesh_mono_core_radius_20};
   /* aspect-ratio: 3 / 1; */
-  padding: ${ratnesh_mono_component_button_space_idle};
+  padding: ${ratnesh_mono_core_size_30};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +43,6 @@ export const ImgIcon = styled.img`
   flex-wrap: wrap;
   margin: 10px;
   ${StyledButton}:active & {
-    transform: scale(0.9);
     transform: scale(0.9);
   }
 `

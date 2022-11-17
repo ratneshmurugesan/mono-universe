@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { variant, color, LayoutProps } from 'styled-system'
-import { ratnesh_mono_component_button_text_color_idle } from '../../tokens/_styles.json'
+import tokens from '../../tokens/_styles.json'
+
+const { ratnesh_mono_component_button_text_color_idle } = tokens
 
 const common = {
   fontFamily: 'ratnesh-roboto',
@@ -22,7 +24,7 @@ const variants = {
     ...common,
   },
   heading2: {
-    fontSize: [3, 4, 5],
+    fontSize: [1, 2, 3],
     fontWeight: 600,
     ...common,
   },
