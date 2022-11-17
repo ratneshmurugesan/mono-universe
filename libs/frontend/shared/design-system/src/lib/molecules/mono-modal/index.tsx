@@ -1,5 +1,8 @@
-import { useRef, ReactNode } from 'react'
-import { StyledModalUnderlay } from './styles'
+import { useSoundSystem } from '@mono-universe/frontend/shared/sound-system'
+import { useRef, useState, ReactNode } from 'react'
+import { MonoBox, MonoFlexBox } from '../../atoms/mono-box'
+import { MonoButton } from '../../atoms/mono-button'
+import { StyledModalUnderlay, StyledModalWithVariants } from './styles'
 import { useMonoModal } from './use-mono-modal'
 
 type TMonoModal = {
@@ -12,7 +15,17 @@ type TMonoModal = {
 
 export function MonoModal(props: TMonoModal) {
   const { modalProps, useOverlay, FocusScope, useDialog } = useMonoModal()
-  const { title, children } = props
+  const { title, children, isOpen, onClose } = props
+  const [view, setView] = useState('rightSide')
+
+  const { playOnButtonClick, playOnButtonRelease } = useSoundSystem()
+  const onPressStart = () => playOnButtonClick()
+  const onPressEnd = () => playOnButtonRelease()
+
+  const mouseEventHandlersWithSoundProps = {
+    onPressStart,
+    onPressEnd,
+  }
 
   // Handle interacting outside the dialog and pressing
   // the Escape key to close the modal.
@@ -21,26 +34,50 @@ export function MonoModal(props: TMonoModal) {
   // Get props for the dialog and its title
   const { dialogProps, titleProps } = useDialog(props, overlayRef)
 
-  return (
+  const handleModalViewChange = (view: string) => setView(view)
+
+  const selectedVariant = view
+  return isOpen ? (
     <StyledModalUnderlay {...underlayProps}>
       <FocusScope contain restoreFocus autoFocus>
-        <div
+        <StyledModalWithVariants
+          variant={selectedVariant}
           {...overlayProps}
           {...dialogProps}
           {...modalProps}
           ref={overlayRef}
-          style={{
-            background: 'white',
-            color: 'black',
-            padding: 30,
-          }}
         >
-          <div>
-            <h3 {...titleProps}>{title}</h3>
-          </div>
+          <MonoFlexBox variant="flexRow" justifyContent="space-between">
+            <MonoFlexBox variant="flexRow" justifyContent="space-between">
+              <MonoButton
+                {...mouseEventHandlersWithSoundProps}
+                onPress={() => handleModalViewChange('leftSide')}
+              >
+                Left
+              </MonoButton>
+              <MonoButton
+                {...mouseEventHandlersWithSoundProps}
+                onPress={() => handleModalViewChange('center')}
+              >
+                Center
+              </MonoButton>
+              <MonoButton
+                {...mouseEventHandlersWithSoundProps}
+                onPress={() => handleModalViewChange('rightSide')}
+              >
+                Right
+              </MonoButton>
+            </MonoFlexBox>
+            <MonoBox>
+              <MonoButton {...mouseEventHandlersWithSoundProps} onPress={onClose}>
+                X
+              </MonoButton>
+            </MonoBox>
+          </MonoFlexBox>
+          <h3 {...titleProps}>{title}</h3>
           <div> {children}</div>
-        </div>
+        </StyledModalWithVariants>
       </FocusScope>
     </StyledModalUnderlay>
-  )
+  ) : null
 }
