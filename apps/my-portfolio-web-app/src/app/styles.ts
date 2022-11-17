@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { ratnesh_mono_asset_font_roboto } from 'libs/frontend/shared/design-system/src/lib/tokens/_fonts.json'
+import tokens from 'libs/frontend/shared/design-system/src/lib/tokens/_fonts.json'
+const { ratnesh_mono_asset_font_roboto } = tokens
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {

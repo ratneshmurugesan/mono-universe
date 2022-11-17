@@ -25,11 +25,9 @@ export const PrototypeB = () => {
         onPressEnd={handleOnMouseUp}
       />
       <Outlet />
-      {state.isOpen && (
-        <MonoModal title="Test" isOpen onClose={() => state.close()} isDismissable>
-          Test Modal
-        </MonoModal>
-      )}
+      <MonoModal title="Test" isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+        Test Modal
+      </MonoModal>
     </MonoFlexBox>
   )
 }
