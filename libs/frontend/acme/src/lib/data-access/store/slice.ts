@@ -16,7 +16,7 @@ const initialState: IAppState = {
     ...commonAPIFields,
   },
   selectedRows: { header: false },
-  colWidthMap: { id: 200, albumId: 200, thumbnail: 200, title: 200, url: 300 },
+  colWidthMap: { id: 300, albumId: 300, thumbnail: 300, title: 300, url: 300 },
   colAlignMap: {
     id: 'center',
     albumId: 'center',

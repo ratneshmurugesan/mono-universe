@@ -8,9 +8,10 @@ import { store } from '../../data-access/store'
 function Home() {
   return (
     <Provider store={store}>
-      <MonoLabel variant="label">Acme</MonoLabel>
-      <MonoText variant="heading2">Data Table component</MonoText>
+      <div>
+        <MonoLabel variant="label">Acme - <MonoText variant="heading2">Data Table component</MonoText></MonoLabel>
       <CustomTable />
+      </div>
     </Provider>
   )
 }

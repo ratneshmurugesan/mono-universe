@@ -115,7 +115,6 @@ export const CustomTable = () => {
     rowData,
     selectedColWidthMap,
     selectedColAlignMap,
-    totalWidth,
     loadMoreRows,
     isRowLoaded,
     handleOnRowClick,
@@ -139,13 +138,13 @@ export const CustomTable = () => {
     >
       {({ onRowsRendered, registerChild }) => (
         <AutoSizer>
-          {() => {
+          {({ width }) => {
             return (
               <StyledTable
                 ref={registerChild}
                 onRowsRendered={onRowsRendered}
-                width={totalWidth}
-                height={700}
+                width={width}
+                height={window.innerHeight - 170}
                 headerHeight={60}
                 rowHeight={80}
                 rowCount={rowData.length}

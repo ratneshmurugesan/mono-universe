@@ -41,7 +41,7 @@ export const StyledRootBox = styled(MonoGridBox)`
   grid-template-columns: 1fr;
   margin: 0 auto;
   padding: 0 1rem;
-  max-width: 44rem;
+  /* max-width: 44rem; */
 `
 
 export const StyledMonoBox = styled(MonoBox)`
