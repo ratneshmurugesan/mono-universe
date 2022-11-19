@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Routes, useSearchParams } from 'react-router-dom'
 
 import { portfolioRoutes, TabLinks } from '@mono-universe/frontend/portfolio/web'
 import { OverlayProvider } from 'react-aria'
@@ -14,53 +14,51 @@ import {
 } from '@mono-universe/frontend/shared/design-system'
 import styled, { ThemeProvider } from 'styled-components'
 import { acmeRoutes } from '@mono-universe/frontend/acme'
-import { useReactStately } from '@mono-universe/frontend/shared/hooks'
 
 export const StyledOverlayProvider = styled(OverlayProvider)(() => ({ height: '100%' }))
 
-export function App() {
+function App() {
+  const [, setSearchParams] = useSearchParams()
   const allRoutes = [...portfolioRoutes, ...acmeRoutes]
-  const { useOverlayTriggerState } = useReactStately()
-  const state = useOverlayTriggerState({ type: 'dialog' })
+
+  const handleOnMenuClick = () => {
+    setSearchParams({ name: 'prototype', pos: 'right' })
+  }
 
   return (
     <ThemeProvider theme={portfolioTheme}>
       <StyledOverlayProvider>
         <GlobalStyle />
-        <Router>
-          <StyledRootBox>
-            <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
-              <MonoText variant="display">Ratnesh Murugesan</MonoText>
-              <MonoShowHideBox variant="small">
-                <MonoButton onPress={() => state.open()}>Menu</MonoButton>
-              </MonoShowHideBox>
-              <MonoShowHideBox variant="default">
-                <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
-                  <TabLinks />
-                </MonoFlexBox>
-              </MonoShowHideBox>
-            </MonoFlexBox>
-            <MonoGridBox
-              justifyContent="flex-start"
-              minWidth={0}
-              minHeight={0}
-              gridTemplateColumns="1fr"
-            >
-              <Routes>{allRoutes}</Routes>
-            </MonoGridBox>
-          </StyledRootBox>
-          <MonoModal
-            name="side-menu-modal"
-            title=""
-            isOpen={state.isOpen}
-            onClose={() => state.close()}
-            isDismissable={false}
+        <StyledRootBox>
+          <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
+            <MonoText variant="display">Ratnesh Murugesan</MonoText>
+            <MonoShowHideBox variant="small">
+              <MonoButton onPress={handleOnMenuClick}>Menu</MonoButton>
+            </MonoShowHideBox>
+            <MonoShowHideBox variant="default">
+              <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="center">
+                <TabLinks />
+              </MonoFlexBox>
+            </MonoShowHideBox>
+          </MonoFlexBox>
+          <MonoGridBox
+            justifyContent="flex-start"
+            minWidth={0}
+            minHeight={0}
+            gridTemplateColumns="1fr"
           >
+            <Routes>{allRoutes}</Routes>
+          </MonoGridBox>
+        </StyledRootBox>
+        <MonoModal
+          name="side-menu-modal"
+          title="🚀"
+          childComponent={
             <StyledMonoBox>
               <TabLinks />
             </StyledMonoBox>
-          </MonoModal>
-        </Router>
+          }
+        />
       </StyledOverlayProvider>
     </ThemeProvider>
   )

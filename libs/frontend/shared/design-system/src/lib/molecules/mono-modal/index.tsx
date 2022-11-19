@@ -1,24 +1,31 @@
+import { useRef, useState, ReactNode, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+
 import { useSoundSystem } from '@mono-universe/frontend/shared/sound-system'
-import { useRef, useState, ReactNode } from 'react'
 import { MonoBox, MonoFlexBox, MonoGridBox } from '../../atoms/mono-box'
 import { MonoButton } from '../../atoms/mono-button'
 import { MonoText } from '../../atoms/mono-text'
 import { StyledModalUnderlay, StyledModalWithVariants } from './styles'
 import { useMonoModal } from './use-mono-modal'
+import { useReactStately } from '@mono-universe/frontend/shared/hooks'
 
 export type TMonoModal = {
   name: string
   title: string
-  children: ReactNode
-  isOpen: boolean
-  onClose: () => void
-  isDismissable: boolean
+  childComponent: ReactNode
 }
 
 export function MonoModal(props: TMonoModal) {
   const { modalProps, useOverlay, FocusScope, useDialog } = useMonoModal()
-  const { title, children, isOpen, onClose } = props
-  const [view, setView] = useState('rightSide')
+  const { useOverlayTriggerState } = useReactStately()
+  const state = useOverlayTriggerState({ type: 'dialog' })
+  const [searchParams, setSearchParams] = useSearchParams()
+  const { title, childComponent } = props
+  const name = searchParams.get('name')
+  const pos = searchParams.get('pos')
+  const [view, setView] = useState(pos ? pos : 'left')
+  const isModalMountedRef = useRef(true)
+  const isOpen = state.isOpen
 
   const { playOnButtonClick, playOnButtonRelease } = useSoundSystem()
   const onPressStart = () => playOnButtonClick()
@@ -29,14 +36,40 @@ export function MonoModal(props: TMonoModal) {
     onPressEnd,
   }
 
-  // Handle interacting outside the dialog and pressing
-  // the Escape key to close the modal.
+  useEffect(() => {
+    if (isModalMountedRef.current) {
+      if (name && pos) {
+        state.open()
+        setView(pos)
+        isModalMountedRef.current = false
+      } else {
+        state.close()
+      }
+    }
+    return () => {
+      isModalMountedRef.current = true // and pass true to next render
+    }
+  }, [state, name, pos])
+
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const { overlayProps, underlayProps } = useOverlay(props, overlayRef)
-  // Get props for the dialog and its title
   const { dialogProps, titleProps } = useDialog(props, overlayRef)
 
-  const handleModalViewChange = (view: string) => setView(view)
+  const handleModalViewChange = (view: string) => {
+    searchParams.set('pos', view)
+    setSearchParams(searchParams)
+    setView(view)
+  }
+
+  const handleModalCloseClick = () => {
+    if (name && pos) {
+      searchParams.delete('name')
+      searchParams.delete('pos')
+      setSearchParams(searchParams)
+      state.close()
+      isModalMountedRef.current = true
+    }
+  }
 
   const selectedVariant = view
   return isOpen ? (
@@ -54,7 +87,7 @@ export function MonoModal(props: TMonoModal) {
               <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="flex-start">
                 <MonoButton
                   {...mouseEventHandlersWithSoundProps}
-                  onPress={() => handleModalViewChange('leftSide')}
+                  onPress={() => handleModalViewChange('left')}
                 >
                   Left
                 </MonoButton>
@@ -66,13 +99,13 @@ export function MonoModal(props: TMonoModal) {
                 </MonoButton>
                 <MonoButton
                   {...mouseEventHandlersWithSoundProps}
-                  onPress={() => handleModalViewChange('rightSide')}
+                  onPress={() => handleModalViewChange('right')}
                 >
                   Right
                 </MonoButton>
               </MonoFlexBox>
               <MonoBox>
-                <MonoButton {...mouseEventHandlersWithSoundProps} onPress={onClose}>
+                <MonoButton {...mouseEventHandlersWithSoundProps} onPress={handleModalCloseClick}>
                   X
                 </MonoButton>
               </MonoBox>
@@ -81,7 +114,7 @@ export function MonoModal(props: TMonoModal) {
               <MonoText variant="heading1" {...titleProps}>
                 {title}
               </MonoText>
-              <MonoBox>{children}</MonoBox>
+              <MonoBox>{childComponent}</MonoBox>
             </MonoBox>
           </MonoGridBox>
         </StyledModalWithVariants>

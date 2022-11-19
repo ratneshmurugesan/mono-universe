@@ -28,7 +28,7 @@ const slideOut = keyframes`
 `
 
 const variants = {
-  rightSide: {
+  right: {
     position: 'absolute',
     right: ['-100%', '-75%', '-50%'],
     width: ['100%', '75%', '50%'],
@@ -37,7 +37,7 @@ const variants = {
     height: '90%',
     width: ['100%', '80%', '90%'],
   },
-  leftSide: {
+  left: {
     position: 'absolute',
     left: 0,
     width: ['100%', '75%', '50%'],
