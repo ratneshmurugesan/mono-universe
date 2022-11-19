@@ -1,4 +1,5 @@
 import { MonoLabel, MonoText } from '@mono-universe/frontend/shared/design-system'
+import { StyledMonoBox } from './styles'
 
 export function Work() {
   const currentPortfolioLink = 'https://mono-universe-ratnesh-murugesan.vercel.app/'
@@ -10,7 +11,7 @@ export function Work() {
   const handleRedirect = (url: string) =>
     window.open(url, '_blank', 'noopener,noreferrer,resizable')
   return (
-    <>
+    <StyledMonoBox>
       <MonoLabel variant="label">Current portfolio</MonoLabel>
       <MonoText variant="link" onClick={() => handleRedirect(currentPortfolioLink)}>
         {currentPortfolioLink}
@@ -26,6 +27,6 @@ export function Work() {
       <MonoText variant="link" onClick={() => handleRedirect(previousPortfolioGithubRepoLink)}>
         {previousPortfolioGithubRepoLink}
       </MonoText>
-    </>
+    </StyledMonoBox>
   )
 }

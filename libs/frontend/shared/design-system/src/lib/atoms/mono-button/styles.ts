@@ -33,6 +33,7 @@ export const StyledButton = styled.button`
     cursor: pointer;
     background: ${ratnesh_mono_component_button_background_color_focussed};
     ${buttonLightProps}
+    transform: scale(0.9);
   }
 `
 

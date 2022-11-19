@@ -26,6 +26,8 @@ import {
   GridAutoColumnsProps,
   GridColumnProps,
   GridColumnGapProps,
+  DisplayProps,
+  GridRowProps,
 } from 'styled-system'
 
 type BoxProps = {
@@ -46,6 +48,7 @@ const defaults: CSSObject = {
   boxSizing: 'border-box',
   '-webkit-box-sizing': 'border-box',
   '-moz-box-sizing': 'border-box',
+  height: '100%',
 }
 export const MonoBox = styled('div').attrs<BoxProps>(handleProps)<BoxProps>(
   defaults,
@@ -83,7 +86,8 @@ type GridBoxProps = GridTemplateColumnsProps &
   GridAutoRowsProps &
   GridAutoColumnsProps &
   GridColumnProps &
-  GridColumnGapProps
+  GridColumnGapProps &
+  GridRowProps
 
 export const MonoGridBox = styled(MonoBox)<GridBoxProps>(compose(grid, position, flexbox, grid))
 MonoGridBox.defaultProps = {
@@ -97,3 +101,14 @@ export const MonoModalBox = styled(MonoBox)(() => ({
   height: '100%',
   width: '100%',
 }))
+
+const menuVariants = {
+  small: {
+    display: ['flex', 'none', 'none', 'none'],
+  },
+  default: {
+    display: ['none', 'flex'],
+  },
+}
+export const MonoShowHideBox = styled(MonoBox)<DisplayProps>(variant({ variants: menuVariants }))
+MonoShowHideBox.defaultProps = {}

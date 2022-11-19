@@ -26,7 +26,7 @@ export const prototypeRoutes = {
     },
     {
       id: 'prototypeShoe',
-      name: '3D-Shoero-Gravity',
+      name: '3D-Shoero-Gravity*',
       path: 'prototypeShoe',
       subPages: [],
     },

@@ -1,11 +1,13 @@
 import { useSoundSystem } from '@mono-universe/frontend/shared/sound-system'
 import { useRef, useState, ReactNode } from 'react'
-import { MonoBox, MonoFlexBox } from '../../atoms/mono-box'
+import { MonoBox, MonoFlexBox, MonoGridBox } from '../../atoms/mono-box'
 import { MonoButton } from '../../atoms/mono-button'
+import { MonoText } from '../../atoms/mono-text'
 import { StyledModalUnderlay, StyledModalWithVariants } from './styles'
 import { useMonoModal } from './use-mono-modal'
 
-type TMonoModal = {
+export type TMonoModal = {
+  name: string
   title: string
   children: ReactNode
   isOpen: boolean
@@ -47,35 +49,41 @@ export function MonoModal(props: TMonoModal) {
           {...modalProps}
           ref={overlayRef}
         >
-          <MonoFlexBox variant="flexRow" justifyContent="space-between">
+          <MonoGridBox>
             <MonoFlexBox variant="flexRow" justifyContent="space-between">
-              <MonoButton
-                {...mouseEventHandlersWithSoundProps}
-                onPress={() => handleModalViewChange('leftSide')}
-              >
-                Left
-              </MonoButton>
-              <MonoButton
-                {...mouseEventHandlersWithSoundProps}
-                onPress={() => handleModalViewChange('center')}
-              >
-                Center
-              </MonoButton>
-              <MonoButton
-                {...mouseEventHandlersWithSoundProps}
-                onPress={() => handleModalViewChange('rightSide')}
-              >
-                Right
-              </MonoButton>
+              <MonoFlexBox variant="flexRow" justifyContent="space-between" alignItems="flex-start">
+                <MonoButton
+                  {...mouseEventHandlersWithSoundProps}
+                  onPress={() => handleModalViewChange('leftSide')}
+                >
+                  Left
+                </MonoButton>
+                <MonoButton
+                  {...mouseEventHandlersWithSoundProps}
+                  onPress={() => handleModalViewChange('center')}
+                >
+                  Center
+                </MonoButton>
+                <MonoButton
+                  {...mouseEventHandlersWithSoundProps}
+                  onPress={() => handleModalViewChange('rightSide')}
+                >
+                  Right
+                </MonoButton>
+              </MonoFlexBox>
+              <MonoBox>
+                <MonoButton {...mouseEventHandlersWithSoundProps} onPress={onClose}>
+                  X
+                </MonoButton>
+              </MonoBox>
             </MonoFlexBox>
             <MonoBox>
-              <MonoButton {...mouseEventHandlersWithSoundProps} onPress={onClose}>
-                X
-              </MonoButton>
+              <MonoText variant="heading1" {...titleProps}>
+                {title}
+              </MonoText>
+              <MonoBox>{children}</MonoBox>
             </MonoBox>
-          </MonoFlexBox>
-          <h3 {...titleProps}>{title}</h3>
-          <div> {children}</div>
+          </MonoGridBox>
         </StyledModalWithVariants>
       </FocusScope>
     </StyledModalUnderlay>

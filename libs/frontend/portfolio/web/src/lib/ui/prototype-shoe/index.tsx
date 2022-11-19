@@ -1,18 +1,13 @@
 import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
 import { ContactShadows, Environment, OrbitControls } from '@react-three/drei'
 import Shoe from './components/shoe'
 import ColorPicker from './components/color-picker'
-
-const canvasStyle = {
-  width: '100%',
-  aspectRatio: '1 / 1',
-}
+import { StyledCanvas, StyledMonoGridBox } from './styles'
 
 export function PrototypeShoe() {
   return (
-    <>
-      <Canvas shadows camera={{ position: [0, 0, 4], fov: 40 }} id="canvas" style={canvasStyle}>
+    <StyledMonoGridBox>
+      <StyledCanvas shadows camera={{ position: [0, 0, 4], fov: 40 }} id="canvas">
         <ambientLight intensity={0.7} />
         <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
         <Suspense fallback={'Loading..'}>
@@ -122,8 +117,8 @@ export function PrototypeShoe() {
           enableZoom={false}
           enablePan={false}
         />
-      </Canvas>
+      </StyledCanvas>
       <ColorPicker />
-    </>
+    </StyledMonoGridBox>
   )
 }

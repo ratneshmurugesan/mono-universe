@@ -26,19 +26,6 @@ export const StyledModalUnderlay = styled.div`
 const slideOut = keyframes`
   100% { right: 0 }
 `
-// export const StyledModal = styled(MonoBox)`
-//   background-color: white;
-//   color: black;
-//   padding: 30px;
-//   position: absolute;
-//   height: 100%;
-//   right: -50%;
-//   width: 50%;
-//   box-sizing: border-box;
-
-//   animation: ${slideOut} ${ratnesh_mono_core_duration_30} ${ratnesh_mono_core_animation_10}
-//     ${ratnesh_mono_core_duration_20} normal forwards;
-// `
 
 const variants = {
   rightSide: {

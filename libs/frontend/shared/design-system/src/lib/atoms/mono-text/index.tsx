@@ -11,8 +11,6 @@ const common = {
   boxSizing: 'border-box',
   whiteSpace: 'normal',
   wordBreak: 'break-word',
-  // overflow: 'hidden',
-  // textOverflow: 'ellipsis',
   pointerEvents: 'none',
   color: ratnesh_mono_component_button_text_color_idle,
 }
@@ -24,7 +22,7 @@ const variants = {
     ...common,
   },
   heading2: {
-    fontSize: [1, 2, 3],
+    fontSize: [1, 2, 3, 3],
     fontWeight: 600,
     ...common,
   },
@@ -42,7 +40,7 @@ const variants = {
     ...common,
   },
   paragraph2: {
-    fontSize: 1,
+    fontSize: [1],
     ...common,
   },
   label: {
@@ -60,7 +58,8 @@ const variants = {
     '&:hover': {
       backgroundColor: '#e2e2e2',
     },
-    padding: '10px',
+    margin: '10px',
+    padding: '2px 5px',
   },
 }
 

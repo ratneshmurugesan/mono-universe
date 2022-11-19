@@ -25,7 +25,13 @@ export const PrototypeB = () => {
         onPressEnd={handleOnMouseUp}
       />
       <Outlet />
-      <MonoModal title="Test" isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+      <MonoModal
+        name="prototype-modal"
+        title="Test"
+        isOpen={state.isOpen}
+        onClose={() => state.close()}
+        isDismissable
+      >
         Test Modal
       </MonoModal>
     </MonoFlexBox>
