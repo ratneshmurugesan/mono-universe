@@ -9,8 +9,10 @@ function Home() {
   return (
     <Provider store={store}>
       <div>
-        <MonoLabel variant="label">Acme - <MonoText variant="heading2">Data Table component</MonoText></MonoLabel>
-      <CustomTable />
+        <MonoLabel variant="label">
+          Acme - <MonoText variant="heading2">Data Table component</MonoText>
+        </MonoLabel>
+        <CustomTable />
       </div>
     </Provider>
   )
