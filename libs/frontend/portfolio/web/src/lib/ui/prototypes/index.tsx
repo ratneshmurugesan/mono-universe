@@ -15,7 +15,7 @@ export function Prototypes() {
   const prototypePageRoutes = flattenRoutes.find((obj: TRouteObj) => obj.id === pageId)?.subPages
 
   return (
-    <MonoGridBox gridTemplateRows="10% auto">
+    <MonoGridBox gridTemplateRows="auto 1fr">
       <MonoFlexBox variant="flexRow" justifyContent="space-around" alignItems="center">
         <TabLinks routesDataLink={prototypePageRoutes} />
       </MonoFlexBox>

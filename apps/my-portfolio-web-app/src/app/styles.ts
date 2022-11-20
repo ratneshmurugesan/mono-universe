@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
    & > div {
       width: 100%;
-      padding: 30px;
+      padding: 20px;
       position: absolute;
       top: 0;
       left: 0; 
