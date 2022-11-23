@@ -1,8 +1,24 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { variant, color, LayoutProps } from 'styled-system'
 import tokens from '../../tokens/_styles.json'
 
-const { ratnesh_mono_component_button_text_color_idle } = tokens
+const {
+  ratnesh_mono_component_button_text_color_idle,
+  ratnesh_mono_semantic_animation_entrance_productive,
+} = tokens
+
+const focusInExpand = keyframes`
+  0%, 100% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0.3;
+  }
+  50% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+`
 
 const common = {
   fontFamily: 'ratnesh-roboto',
@@ -82,6 +98,13 @@ export const MonoText = styled('p').attrs<TextProps>(handleProps)<TextProps>(
   color,
   variant({ variants }),
 )
+export const MonoAnimatedText = styled(MonoText).attrs<TextProps>(handleProps)<TextProps>`
+  animation-name: ${focusInExpand};
+  animation-duration: 6s;
+  animation-timing-function: ${ratnesh_mono_semantic_animation_entrance_productive};
+  animation-iteration-count: infinite;
+`
+
 export const MonoLabel = styled('label').attrs<TextProps>(handleProps)<TextProps>(
   defaults,
   color,
