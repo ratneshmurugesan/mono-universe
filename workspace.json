@@ -3,6 +3,7 @@
   "projects": {
     "backend-api": "libs/backend/api",
     "frontend-acme": "libs/frontend/acme",
+    "frontend-estimate": "libs/frontend/estimate",
     "frontend-portfolio-mobile": "libs/frontend/portfolio/mobile",
     "frontend-portfolio-web": "libs/frontend/portfolio/web",
     "frontend-shared-common-types": "libs/frontend/shared/common-types",

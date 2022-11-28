@@ -20,6 +20,7 @@
     "paths": {
       "@mono-universe/backend/api": ["libs/backend/api/src/index.ts"],
       "@mono-universe/frontend/acme": ["libs/frontend/acme/src/index.ts"],
+      "@mono-universe/frontend/estimate": ["libs/frontend/estimate/src/index.ts"],
       "@mono-universe/frontend/portfolio/mobile": ["libs/frontend/portfolio/mobile/src/index.ts"],
       "@mono-universe/frontend/portfolio/web": ["libs/frontend/portfolio/web/src/index.ts"],
       "@mono-universe/frontend/shared/common-types": [

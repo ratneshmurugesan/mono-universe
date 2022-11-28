@@ -14,12 +14,13 @@ import {
 } from '@mono-universe/frontend/shared/design-system'
 import styled, { ThemeProvider } from 'styled-components'
 import { acmeRoutes } from '@mono-universe/frontend/acme'
+import { estimateRoutes } from '@mono-universe/frontend/estimate'
 
 export const StyledOverlayProvider = styled(OverlayProvider)(() => ({ height: '100%' }))
 
 function App() {
   const [, setSearchParams] = useSearchParams()
-  const allRoutes = [...portfolioRoutes, ...acmeRoutes]
+  const allRoutes = [...portfolioRoutes, ...acmeRoutes, ...estimateRoutes]
 
   const handleOnMenuClick = () => {
     setSearchParams({ name: 'prototype', pos: 'right' })

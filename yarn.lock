@@ -13307,6 +13307,11 @@ junk@^3.1.0:
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
+ka-table@^7.6.3:
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/ka-table/-/ka-table-7.6.3.tgz#6db40c82492f5a450e92ffa1d400914ab44c02f1"
+  integrity sha512-gQd7yZ6/ivbtmisDC2wgqnM0f5g4bxDv5IaLwdVFPnXsxZoCZvTvblbNr9+LBdPRjGw9yqUWt6GjBf3JofHbWA==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"

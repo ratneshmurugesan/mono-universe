@@ -28,6 +28,11 @@
             "glob": "**/*",
             "input": "libs/frontend/portfolio/web/src/lib/ui/prototype-shoe/assets",
             "output": "./assets/glbs"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/frontend/estimate/src/assets",
+            "output": "./assets/icons"
           }
         ],
         "styles": [],
