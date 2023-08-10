@@ -1,5 +1,5 @@
+/* eslint-disable */
 import { useGLTF } from '@react-three/drei'
-
 export const useCustomGltf = () => {
   // Drei's useGLTF hook sets up draco automatically, that's how it differs from useLoader(GLTFLoader, url)
   // { nodes, materials } are extras that come from useLoader, these do not exist in threejs/GLTFLoader
