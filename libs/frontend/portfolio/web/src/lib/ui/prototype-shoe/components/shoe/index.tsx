@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { useCustomGltf } from '../../hooks/useCustomGltf'
@@ -8,7 +10,7 @@ import { useCustomState } from '../../hooks/useCustomState'
 export function Shoe() {
   const { state } = useCustomState()
   const { snap } = useCustomSnapshot(state)
-  const { nodes, materials } = useCustomGltf()
+  const { nodes, materials } = useCustomGltf() as any
 
   const ref = useRef({
     rotation: {
