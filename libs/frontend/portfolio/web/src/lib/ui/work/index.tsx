@@ -8,10 +8,22 @@ export function Work() {
   const previousPortfolioLink = 'https://ratneshs-tech-attic.netlify.app/'
   const previousPortfolioGithubRepoLink = 'https://github.com/ratneshmurugesan/tech-attic'
 
+  const discoverWebSiteLink = 'https://discover-web-ratnesh-x-app.vercel.app/'
+
+  const assetIntelWebSiteLink = 'https://assetintel-ratnesh-x-app.vercel.app/'
+
   const handleRedirect = (url: string) =>
     window.open(url, '_blank', 'noopener,noreferrer,resizable')
   return (
     <StyledMonoBox>
+      <MonoLabel variant="label">Recent projects</MonoLabel>
+      <MonoText variant="link" onClick={() => handleRedirect(discoverWebSiteLink)}>
+        {discoverWebSiteLink}
+      </MonoText>
+      <MonoText variant="link" onClick={() => handleRedirect(assetIntelWebSiteLink)}>
+        {assetIntelWebSiteLink}
+      </MonoText>
+      <br />
       <MonoLabel variant="label">Current portfolio</MonoLabel>
       <MonoText variant="link" onClick={() => handleRedirect(currentPortfolioLink)}>
         {currentPortfolioLink}
