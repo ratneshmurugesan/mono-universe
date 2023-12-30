@@ -4,6 +4,7 @@ import { StyledMonoBox } from './styles'
 export function Work() {
   const previousPortfolioLink = 'https://ratneshs-tech-attic.netlify.app/'
 
+  const oceanCardWalletApp = 'https://ocean-card-wallet.vercel.app/'
   const shiningCryptoApp = 'https://shining-crypto.vercel.app/'
   const microEditorApp = 'https://micro-editor.vercel.app/'
   const flexibleSkeletonApp = 'https://flexible-skeleton-loader.vercel.app/'
@@ -15,17 +16,20 @@ export function Work() {
   return (
     <StyledMonoBox>
       <MonoLabel variant="label">Recent projects</MonoLabel>
+      <MonoText variant="link" onClick={() => handleRedirect(oceanCardWalletApp)}>
+        Ocean Card Wallet - make sense when viewed in smaller screen
+      </MonoText>
       <MonoText variant="link" onClick={() => handleRedirect(shiningCryptoApp)}>
-        {shiningCryptoApp}
+        Shining Crypto
       </MonoText>
       <MonoText variant="link" onClick={() => handleRedirect(flexibleSkeletonApp)}>
-        {flexibleSkeletonApp}
+        Flexible Skeleton Loader
       </MonoText>
       <MonoText variant="link" onClick={() => handleRedirect(microEditorApp)}>
-        {microEditorApp}
+        Micro Editor
       </MonoText>
       <MonoText variant="link" onClick={() => handleRedirect(classicCrud)}>
-        {classicCrud}
+        Classic CRUD
       </MonoText>
       <br />
       <MonoLabel variant="label">Previous portfolio</MonoLabel>
